@@ -40,7 +40,7 @@
 			<div class="name_page">
 				<img src="assets/img/logosinf.png" class="rounded">
 				<hr>
-				Logo
+				Infotec
 			</div>
 			<div class="options_menu" id="">
 				<a href="index.html">
