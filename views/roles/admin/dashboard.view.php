@@ -50,7 +50,7 @@
 						<h4 class="text-center">Inicio</h4>
 					</div>
 				</a>
-				<a href="modules/1_users/user_principal.html">
+				<a href="?c=Roles">
 					<div class="option">
 						<i class="fa-solid fa-users" title="Usuario"></i>
 					<h4>Ususario</h4>
