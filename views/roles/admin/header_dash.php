@@ -12,19 +12,17 @@
 </head>
 <body id="body">
 	
-		<nav class="navbar-expand-lg navbar-light nav navbar-nav navbar-right sticky-top" id="barra">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-			</button>
+		<nav class="navbar-expand-lg navbar-light nav navbar-nav navbar-right sticky-top d-flex justify-content-between" id="barra">
+			
 			<div class="bi bi-three-dots-vertical text-white " id="btn_open">
 			</div>
-			<div class="nav" id="navbarNavAltMarkup">
-				<div class="collapse navbar-collapse text-white ml-2">
+			<div class="nav" id="navbarNavAltMarkup ">
+				<div class="collapse navbar-collapse text-white ml-2 ">
 					
 				</div>
-				<div class="justify-content-center barra_nav">
+				<div class="d-flex  barra_nav">
 				 
-				  <a class="btn barra_nav_items" href="#"><i class="bi bi-headset"></i></i>Contáctenos</a>
+				  <a class="btn barra_nav_items" href="#"><i class="bi bi-headset "></i></i>Contáctenos</a>
 				  <a class="btn dropdown-toggle barra_nav_items" type="button" data-toggle="dropdown" aria-expanded="false">
 					<i class="bi bi-person-circle"></i>Administrador
 				  </a>
@@ -48,16 +46,30 @@
 						<i class= "fas fa-home" title="Productos"></i>
 						<h4 class="text-center">Inicio</h4>
 					</div>
+					</a>
+				<a href="modules/1_users/user_principal.html">
+					<div class="option">
+					<i class="fas fa-clipboard-user"></i>
+					<h4>Roles</h4>
+					</div>
+				</a>
 				</a>
 				<a href="modules/1_users/user_principal.html">
 					<div class="option">
-						<i class="fa-solid fa-users" title="Usuario"></i>
-					<h4>Ususario</h4>
+						<i class="fas fa-user-tie"></i>
+					<h4>Personas</h4>
+					</div>
+				</a>
+				</a>
+				<a href="modules/1_users/user_principal.html">
+					<div class="option">
+					<i class="fas fa-motorcycle align-self-center"></i>
+					<h4>Vehiculos</h4>
 					</div>
 				</a>
 				<a href="#">
 					<div class="option">
-						<i class= "bi bi-archive-fill align-self-center" title="Productos"></i>
+						<i class= "bi bi-archive-fill " title="Productos"></i>
 						<h4>Productos</h4>
 					</div>
 				</a>

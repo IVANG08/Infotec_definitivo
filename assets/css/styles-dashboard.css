@@ -163,7 +163,7 @@ form div {
 }
 
 i.bi,
-i.fa {
+i.fas {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,7 +201,6 @@ i.fa {
 section .row{
     display: flex;
     min-height: calc(100vh - 80px);
-    h
 }
 div.row {
     max-width: 100%;
