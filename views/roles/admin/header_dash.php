@@ -54,7 +54,7 @@
 					</div>
 				</a>
 				</a>
-				<a href="modules/1_users/user_principal.html">
+				<a href="?c=Roles">
 					<div class="option">
 						<i class="fas fa-user-tie"></i>
 					<h4>Personas</h4>
