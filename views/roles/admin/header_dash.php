@@ -37,8 +37,7 @@
 		<div class="menu_side" id="side_menu" >
 			<div class="name_page">
 				<img src="assets/img/logosinf.png" class="rounded">
-				<hr>
-				Infotec
+				
 			</div>
 			<div class="options_menu" id="">
 				<a href="index.html">
@@ -47,14 +46,14 @@
 						<h4 class="text-center">Inicio</h4>
 					</div>
 					</a>
-				<a href="modules/1_users/user_principal.html">
+				<a href="?c=Roles">
 					<div class="option">
 					<i class="fas fa-clipboard-user"></i>
 					<h4>Roles</h4>
 					</div>
 				</a>
 				</a>
-				<a href="?c=Roles">
+				<a href="?c=Persona">
 					<div class="option">
 						<i class="fas fa-user-tie"></i>
 					<h4>Personas</h4>

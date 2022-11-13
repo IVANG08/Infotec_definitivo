@@ -1,10 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 * {
     margin-right: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: bold 'Roboto Condensed';
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 html {
@@ -198,6 +198,7 @@ i.fas {
     border-bottom-right-radius: 0.40rem!important;
     border-bottom-left-radius: 0.40rem!important;
 }
+
 /*------------*/
 section .row{
     display: flex;
