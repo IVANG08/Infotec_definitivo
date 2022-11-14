@@ -66,13 +66,13 @@
 					<h4>Vehiculos</h4>
 					</div>
 				</a>
-				<a href="#">
+				<a href="?c=Products">
 					<div class="option">
 						<i class= "bi bi-archive-fill " title="Productos"></i>
 						<h4>Productos</h4>
 					</div>
 				</a>
-				<a href="#">
+				<a href="?c=Compras">
 					<div class="option">
 						<i class="fas fa-cash-register" ></i>
 					<h4>Compras</h4>

@@ -63,7 +63,7 @@
             <div class="col-10 botones p-3 ">
                 <button class="btn btn-enviar m-2" type="submit">Actualizar</button>
                 <button class="btn btn-danger m-2" type="submit">Cancelar</button>
-                <a href="user_principal.html" class="btn btn-danger m-2" type="submit">atras</a>
+                <a href="?c=Roles" class="btn btn-danger m-2" type="submit">atras</a>
             </div>
             </form>
 

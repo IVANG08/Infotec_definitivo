@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lubrimotos la 30</title>
-    <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/ae713951db.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../../assets/css/styles-dashboard.css">
+    <link rel="stylesheet" href="../../../../assets/css/styles-dashboard.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
 </head>
 
@@ -16,32 +16,47 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 ">
-                <h1>Crear rol</h1>
+                <h1>Actualizar Producto</h1>
                 <hr>
                 <form class="row g-3 needs-validation" novalidate>
 
                     <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Código rol</label>
+                        <label for="validationCustom02" class="form-label">Nombre de Producto</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" required>
                         <div class="valid-feedback">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Nombre rol</label>
+                        <label for="validationCustom02" class="form-label">Código Producto</label>
+                        <input type="text" class="form-control" id="validationCustom02" value="" required>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="validationCustom02" value="" required>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Precio</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" required>
                         <div class="valid-feedback">
                         </div>
                     </div>
 
-                    <div class="col-12 botones p-3 ">
-                        <button class="btn btn-enviar m-2" type="submit">Crear</button>
-                        <button class="btn btn-danger m-2" type="submit">Cancelar</button>
-                        <a href="?c=Roles" class="btn btn-danger m-2" type="submit">atras</a>
-                    </div>
-                </form>
-
             </div>
         </div>
+
+        <div class="col-10 botones p-3">
+            <button class="btn btn-enviar m-2" type="submit">Actualizar</button>
+            <button class="btn btn-danger m-2" type="submit">Cancelar</button>
+            <a href="?c=Products" class="btn btn-danger m-2" type="submit">atras</a>
+        </div>
+        </form>
+
+    </div>
+    </div>
     </div>
 
 

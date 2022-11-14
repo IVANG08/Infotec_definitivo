@@ -14,33 +14,33 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 ">
-            <h1>Roles</h1>
+            <h1>Vehiculos</h1>
             <hr>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Crear rol</h5>
+                            <h5 class="card-title">Crear Vehiculo</h5>
                             <p class="card-text"></p>
-                            <a href="?c=Roles&a=crear" class="btn btn-enviar">ir</a>
+                            <a href="user_new.html" class="btn btn-enviar">ir</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Consultar rol</h5>
+                            <h5 class="card-title">Modificar Vehiculo</h5>
                             <p class="card-text"></p>
-                            <a href="?c=Roles&a=consultar" class="btn btn-enviar">ir</a>
+                            <a href="user_modi.html" class="btn btn-enviar">ir</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Actualizar rol</h5>
+                            <h5 class="card-title">Buscar Vehiculo</h5>
                             <p class="card-text"></p>
-                            <a href="?c=Roles&a=actualizar" class="btn btn-enviar">ir</a>
+                            <a href="user_view.html" class="btn btn-enviar">ir</a>
                         </div>
                     </div>
                 </div>
