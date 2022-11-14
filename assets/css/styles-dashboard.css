@@ -60,7 +60,7 @@ nav {
 }
 
 .btn:hover {
-    color: #bacdde;
+    color: #304b57;
     text-decoration: none;
 }
 
@@ -111,7 +111,7 @@ nav {
 }
 
 .options_menu a:hover {
-    color: #d8d8d8;
+    color: #304b57;
 }
 
 .options_menu .option {
@@ -131,6 +131,8 @@ nav {
     font-size: 18px;
     font-weight: 200;
     cursor: pointer;
+    
+    
 }
 
 a.selected {
@@ -180,7 +182,7 @@ i.fas {
     align-items: center;
     justify-content: center;
 }
-
+/* desplegable menu lateral*/
 
 /*clases para js*/
 
@@ -206,7 +208,31 @@ section .row{
 }
 div.row {
     max-width: 100%;
-    max-height: 25px;
+}
+.tarjetas{
+    display: flex;
+    align-self: center;
+    align-items: flex-end;
+    font-size: 20px;
+    color: #000000;
+}
+.tarjetas a {
+    color: rgb(0, 0, 0);
+    cursor: default;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+.principal {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #304b57;
+}
+.secundario a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #2D93C4;
 }
 .card .card-header .dropdown {
     line-height: 1;
@@ -242,7 +268,7 @@ div.row {
     content: '\f105';
   }
 
-  .border-left-warning {
+  .border-left {
     border-left: 0.25rem solid #2D93C4!important;
     border-left-width: 0.25rem;
     border-left-style: solid;

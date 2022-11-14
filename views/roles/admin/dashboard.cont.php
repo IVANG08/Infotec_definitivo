@@ -10,98 +10,232 @@
 	<link rel="stylesheet" href="../../../assets/css/styles-dashboard.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
 </head>
-<div class="container-fluid">
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Inicio
-                        </h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-<div class=" row row2">
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Persona</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="bi bi-people-fill fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Earnings (Annual)</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                        </div>
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                            </div>
-                            <div class="col">
-                                <div class="progress progress-sm mr-2">
-                                    <div class="progress-bar bg-info" role="progressbar"
-                                        style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
+<div class="container">
+    <div class="row">
+         <div class="col-md-12 ">
+            <h1 class="text-center">Inicio</h1>
+            <hr>
+            <div class="tarjetas">           
+      
+                <div class="col-xl-3 col-md-6 mb-4 ">
+                    <div class="card border-left shadow h-100 py-2 principal">
+                        <div href=""class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold  text-uppercase mb-1 text-white">
+                                        Personas</div>
+                                    
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-user-tie fa-2x text-gray-300 text-white"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-auto">
-                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
                 </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left secundario shadow h-100 py-2">
+                    <a class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-uppercase mb-1">Roles
+                                </div>
+                                <div class="row no-gutters align-items-center">
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-clipboard-user fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left secundario shadow h-100 py-2">
+                    <a class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold  text-uppercase mb-1">
+                                    Personas</div>
+                               
+                            </div>
+                            <div class="col-auto">
+                                <i class="bi bi-people-fill fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                </div>
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left secundario shadow h-100 py-2">
+                        <a class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold  text-uppercase mb-1">
+                                        Vehiculos</div>
+                                    
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-motorcycle fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    </div>
+            </div>
+            <div class="tarjetas">           
+                
+                  <div class="col-xl-3 col-md-6 mb-4 ">
+                                <div class="card border-left shadow h-100 py-2 principal">
+                                    <div href=""class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold  text-uppercase mb-1 text-white">
+                                                    Productos</div>
+                                                
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="bi bi-archive-fill fa-2x text-gray-300 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                        
+                        
+                        
+                <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left secundario shadow h-100 py-2">
+                                <a class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Categorias
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="bi bi-collection-fill fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                                              
+                        
+                <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left secundario shadow h-100 py-2">
+                                <a class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold  text-uppercase mb-1">
+                                                Productos</div>
+                                           
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa-solid fa-boxes-packing fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            </div>
+                 <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left secundario shadow h-100 py-2">
+                                    <a class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold  text-uppercase mb-1">
+                                                    Servicios</div>
+                                                
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa-solid fa-screwdriver-wrench fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                </div>
+            </div>
+            <div class="tarjetas">           
+                <div class="col-xl-3 col-md-6 mb-4 ">
+                    <div class="card border-left shadow h-100 py-2 principal">
+                         <div href=""class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold  text-uppercase mb-1 text-white">
+                                                    Compras</div>
+                                                
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa-solid fa-shop fa-2x text-gray-300 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                                              
+                                              <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left secundario shadow h-100 py-2">
+                                <a class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Facturas
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-cash-register fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left secundario shadow h-100 py-2">
+                                <a class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold  text-uppercase mb-1">
+                                                Inventario</div>
+                                           
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="bi bi-stack fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left secundario shadow h-100 py-2">
+                                    <a class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold  text-uppercase mb-1">
+                                                    Reportes</div>
+                                                
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="bi bi-clipboard2-data-fill fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Pending Requests Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                            Pending Requests</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-ahsdiofhasndilksandklnas
 
 
 <!-- Content Row -->

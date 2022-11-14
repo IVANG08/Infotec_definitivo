@@ -40,7 +40,7 @@
 				
 			</div>
 			<div class="options_menu" id="">
-				<a href="index.html">
+				<a href="?c=Dashboard">
 					<div class="option">
 						<i class= "fas fa-home" title="Productos"></i>
 						<h4 class="text-center">Inicio</h4>
