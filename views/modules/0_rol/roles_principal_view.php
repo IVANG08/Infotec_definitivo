@@ -14,8 +14,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 ">
-            <h1>Roles</h1>
-            <hr>
+            <h1 class="text-white">Roles</h1>
+            <hr class="text-white">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card">
