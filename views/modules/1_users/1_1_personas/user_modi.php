@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Lubrimotos la 30</title>
+	<title>Document</title>
 	<link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<script src="https://kit.fontawesome.com/ae713951db.js" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
 <div class="container">
    <div class="row">
         <div class="col-md-10 ">
-            <h1>Actualizar usuario</h1>
+            <h1>Modificar usuario</h1>
             <hr>
             <form class="row g-3 needs-validation" novalidate>
                 <div class="col-md-6">
@@ -26,33 +26,51 @@
                     <option>Cliente</option>
                     <option>Empleado</option>
                   </select>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
                 </div>
                 <div class="col-md-6">
                   <label for="validationCustom02" class="form-label">Documento de identidad</label>
                   <input type="text" class="form-control" id="validationCustom02" value="" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
                 </div>
                 <div class="col-md-4">
                   <label for="validationCustomUsername" class="form-label">Nombres</label>
                   <div class="input-group has-validation">
                     <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <label for="validationCustomUsername" class="form-label">Apellidos</label>
                   <div class="input-group has-validation">
                     <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <label for="validationCustomUsername" class="form-label">Telefono</label>
                   <div class="input-group has-validation">
                     <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <label for="validationCustomUsername" class="form-label">Email</label>
                   <div class="input-group has-validation">
                     <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-4">

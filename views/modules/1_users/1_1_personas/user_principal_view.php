@@ -1,4 +1,5 @@
 
+
     <div class="container">
         <div class="row">
              <div class="col-md-12 ">
@@ -10,25 +11,25 @@
                         <div class="card-body">
                           <h5 class="card-title">Crear Usuario</h5>
                           <p class="card-text"></p>
-                          <a href="?c=persona&a=crear" class="btn btn-enviar">ir</a>
+                          <a href="user_new.html" class="btn btn-enviar">ir</a>
                         </div>
                       </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="card">
                           <div class="card-body">
-                            <h5 class="card-title">Actualizar Usuario</h5>
+                            <h5 class="card-title">Modificar Usuario</h5>
                             <p class="card-text"></p>
-                            <a href="?c=persona&a=actualizar" class="btn btn-enviar">ir</a>
+                            <a href="user_modi.html" class="btn btn-enviar">ir</a>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-4">
                         <div class="card">
                           <div class="card-body">
-                            <h5 class="card-title">Consultar Usuario</h5>
+                            <h5 class="card-title">Buscar Usuario</h5>
                             <p class="card-text"></p>
-                            <a href="?c=persona&a=consultar" class="btn btn-enviar">ir</a>
+                            <a href="user_view.html" class="btn btn-enviar">ir</a>
                           </div>
                         </div>
                       </div>
