@@ -25,7 +25,7 @@
                     <ul class=" list-group list-group-flush">
                         <li class=" buscar list-group-item">
                             <div class="mb-3 ">
-                                <label for="validationCustom02" class="">Nombre o codigo</label>
+                                <label for="validationCustom02" class="">Nombre o código</label>
                                 <input type="text" class="form-control" id="validationCustom02" value="" required>
                             </div>
                             <a href="user-create.html" class="col-auto">
@@ -64,11 +64,11 @@
                         </tr>
                         <tr class="text-center">
                             <th scope="row">2</th>
-                            <td>Lubricante Motul</td>
-                            <td>Motul 5.100 20W-50</td>
-                            <td>Motul</td>
+                            <td>Pastillas de freno</td>
+                            <td>traseras NS200</td>
+                            <td>kross</td>
                             <td>Universal</td>
-                            <td>$29.000</td>
+                            <td>$16.000</td>
 
 
                             <td class="text-center"><a class="btn btn-warning" href="actualizar_vehiculo.html"><i class="bi bi-pencil-square"></i></a></td>
@@ -76,11 +76,11 @@
                         </tr>
                         <tr class="text-center">
                             <th scope="row">3</th>
-                            <td>Lubricante Motul</td>
-                            <td>Motul 5.100 20W-50</td>
-                            <td>Motul</td>
+                            <td>bujia de iridium</td>
+                            <td>R-i24758</td>
+                            <td>Denso</td>
                             <td>Universal</td>
-                            <td>$29.000</td>
+                            <td>$33.000</td>
 
 
                             <td class="text-center"><a class="btn btn-warning" href="actualizar_vehiculo.html"><i class="bi bi-pencil-square"></i></a></td>
