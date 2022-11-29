@@ -47,27 +47,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="">
-                            <th scope="row">1</th>
-                            <td>Administrador</td>
-                            <td class="text-center"><a class="btn btn-warning" href="user_modi.html"><i class="bi bi-pencil-square"></i></a></td>
-                            <td class="text-center"><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
+                    <?php foreach ($roles as $rol); ?>
+                        <tr>
+                            <td class="text-center"> <?php echo $rol ->getCodigoRol ();?>
+                    </td>
+                    <td class="text-center"> <?php echo $rol ->getNombreRol (); ?>
+                    </td>
+
+                    <td class="text-center"><a class="btn btn-warning" href="user_modi.html"><i class="bi bi-pencil-square"></i></a></td>
+                                <td  class="text-center"><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
                         </tr>
-                        <tr class="">
-                            <th scope="row">1</th>
-                            <td>Administrador</td>
-                            <td class="text-center"><a class="btn btn-warning" href="user_modi.html"><i class="bi bi-pencil-square"></i></a></td>
-                            <td class="text-center"><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
-                        </tr>
-                        <tr class="">
-                            <th scope="row">1</th>
-                            <td>Administrador</td>
-                            <td class="text-center"><a class="btn btn-warning" href="user_modi.html"><i class="bi bi-pencil-square"></i></a></td>
-                            <td class="text-center"><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
-                        </tr>
+                        
                     </tbody>
                 </table>
-                <a href="user_principal.html" class="btn btn-danger m-2" type="submit">atras</a>
+                <a href="?c=Roles" class="btn btn-danger m-2" type="submit">atras</a>
             </div>
         </div>
     </div>
@@ -76,4 +69,5 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js" charset="utf-8"></script>
-</body>
+                    </tbody>
+                    </body>

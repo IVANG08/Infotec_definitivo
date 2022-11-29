@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Crear rol</h5>
                             <p class="card-text"></p>
-                            <a href="user_new.html" class="btn btn-enviar">ir</a>
+                            <a href="?c=Roles&a=crear_rol" class="btn btn-enviar">ir</a>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Consultar rol</h5>
                             <p class="card-text"></p>
-                            <a href="user_modi.html" class="btn btn-enviar">ir</a>
+                            <a href="?c=Roles&a=consultar_rol" class="btn btn-enviar">ir</a>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Actualizar rol</h5>
                             <p class="card-text"></p>
-                            <a href="user_view.html" class="btn btn-enviar">ir</a>
+                            <a href="?c=Roles&a=actualizar_rol" class="btn btn-enviar">ir</a>
                         </div>
                     </div>
                 </div>

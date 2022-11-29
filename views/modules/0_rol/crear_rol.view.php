@@ -18,25 +18,25 @@
             <div class="col-md-10 ">
                 <h1>Crear rol</h1>
                 <hr>
-                <form class="row g-3 needs-validation" novalidate>
+                <form method="post" action="?c=Roles&a=crear_rol" class="row g-3 needs-validation" novalidate>
 
                     <div class="col-md-6">
                         <label for="validationCustom02" class="form-label">Código rol</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
+                        <input type="text" class="form-control" id="validationCustom02" value="" required name="codigo_rol">
                         <div class="valid-feedback">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom02" class="form-label">Nombre rol</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
+                        <input type="text" class="form-control" id="validationCustom02" value="" required name="nombre_rol">
                         <div class="valid-feedback">
                         </div>
                     </div>
 
                     <div class="col-12 botones p-3 ">
                         <button class="btn btn-enviar m-2" type="submit">Crear</button>
-                        <button class="btn btn-danger m-2" type="submit">Cancelar</button>
-                        <a href="user_principal.html" class="btn btn-danger m-2" type="submit">atras</a>
+                        <button class="btn btn-danger m-2" type="reset">Cancelar</button>
+                        <a href="?c=Roles" class="btn btn-danger m-2" type="submit">atras</a>
                     </div>
                 </form>
 

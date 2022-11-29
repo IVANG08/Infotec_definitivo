@@ -18,7 +18,7 @@
     <div class="contenedor">
         <img class="logo" src="assets/img/logosf.jpg" alt="LogodeFazt">
         <h1>Iniciar Sesión</h1>
-        <form class="container_form">
+        <form method="post" action="?c=Login" class="container_form">
             <!--USERNAME-->
             <label for="username">Nombre Usuario</label>
             <input type="text" placeholder="Ingresar Usuario">

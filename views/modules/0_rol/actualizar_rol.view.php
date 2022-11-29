@@ -20,50 +20,20 @@
                 <hr>
                 <form class="row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
-                        <label for="validationCustom01" class="form-label">Rol</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Seleccione</option>
-                    <option>Administrador</option>
-                    <option>Cliente</option>
-                    <option>Empleado</option>
-                  </select>
-                    </div>
-                    <div class="col-md-4">
                         <label for="validationCustom02" class="form-label">Código rol</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" required>
                     </div>
-                    <div class="col-md-2 d-flex aling-items-end"><button class="d-flex aling-items-center  mt-2 btn btn-buscar" type="submit"><i class="bi bi-search"></i></button>
-                    </div>
-
                     <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Nombres</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
+                        <label for="validationCustom01" class="form-label">Rol</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="" required>
+                    
                     </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Telefono</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Contraseña</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom02" class="form-label">Confirmación</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
-                    </div>
+                    
             </div>
             <div class="col-10 botones p-3 ">
                 <button class="btn btn-enviar m-2" type="submit">Actualizar</button>
                 <button class="btn btn-danger m-2" type="submit">Cancelar</button>
-                <a href="user_principal.html" class="btn btn-danger m-2" type="submit">atras</a>
+                <a href="?c=Roles" class="btn btn-danger m-2" type="submit">atras</a>
             </div>
             </form>
 
