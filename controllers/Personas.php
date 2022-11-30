@@ -8,7 +8,7 @@ class Personas{
         }
         public function index(){
             require_once "views/roles/admin/header_dash.php";
-            require_once "views/modules/1_users/user_principal_view.php";
+            require_once "views/modules/1_users/1_1_personas/user_principal_view.php";
             require_once "views/roles/admin/footer.php";
         }
         public function crear_personas(){
@@ -33,12 +33,12 @@ class Personas{
         }
         public function consultar_persona(){
             require_once "views/roles/admin/header_dash.php";
-            require_once "views/modules/1_users/user_view.php";
+            require_once "views/modules/1_users/1_1_personas/user_view.php";
             require_once "views/roles/admin/footer.php";
         }
         public function actualizar_persona(){
             require_once "views/roles/admin/header_dash.php";
-            require_once "views/modules/1_users/user_actualizar.php";
+            require_once "views/modules/1_users/1_1_personas/user_modi.php";
             require_once "views/roles/admin/footer.php";
         }
     }

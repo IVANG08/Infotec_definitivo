@@ -14,24 +14,24 @@
 			try {
 				// Crear la Consulta
 				$sql = 'INSERT INTO personas VALUES (
-							:idRol,
-							:idPersona,
-                            :nombresPersona,
-                            :apellidosPersona,
-                            :correoPersona,
-                            :telefonoPersona,
-                            :passPersona
+							:id_rol,
+							:id_persona,
+                            :nombres_persona,
+                            :apellidos_persona,
+                            :correo_persona,
+                            :telefono_persona,
+                            :pass_persona
 						)';
 				// Preparar la BBDD para la consulta
 				$dbh = $this->pdo->prepare($sql);
 				// Vincular los datos del objeto a la consulta de Inserción
-				$dbh->bindValue('idRol',$persona_dto->getIdRol());			
-				$dbh->bindValue('idPersona',$persona_dto->getIdPersona());
-                $dbh->bindValue('nombresPersona',$persona_dto->getNombresPersona());
-                $dbh->bindValue('apellidosPersona',$persona_dto->getApellidosPersona());
-                $dbh->bindValue('correoPersona',$persona_dto->getCorreoPersona());
-                $dbh->bindValue('telefonoPersona',$persona_dto->getTelefonoPersona());
-                $dbh->bindValue('passPersona',$persona_dto->getPassPersona());
+				$dbh->bindValue('id_rol',$persona_dto->getIdRol());			
+				$dbh->bindValue('id_persona',$persona_dto->getIdPersona());
+                $dbh->bindValue('nombres_persona',$persona_dto->getNombresPersona());
+                $dbh->bindValue('apellidos_persona',$persona_dto->getApellidosPersona());
+                $dbh->bindValue('correo_persona',$persona_dto->getCorreoPersona());
+                $dbh->bindValue('telefono_persona',$persona_dto->getTelefonoPersona());
+                $dbh->bindValue('pass_persona',$persona_dto->getPassPersona());
 				// Ejecutar la consulta
 				$dbh->execute();
 			} catch (Exception $e) {

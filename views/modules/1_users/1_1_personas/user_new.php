@@ -22,6 +22,8 @@
                   <label for="validationCustom01" class="form-label">Perfil</label>
                   <select class="form-control" id="exampleFormControlSelect1" name="id_rol">
                     <option>Seleccione</option>
+                                       
+                    
                     <option value="2">Admin</option>			      
 			              <option value="5">Cliente</option>			      
 			              <option value="8">Empleado</option>
@@ -126,7 +128,7 @@
                 <div class="col-12 botones p-3 ">
                   <button class="btn btn-enviar m-2" type="submit">Enviar</button>
                   <button class="btn btn-danger m-2" type="submit">Cancelar</button>
-                  <a href="user_principal.html"class="btn btn-danger m-2" type="submit">atras</a>
+                  <a href="?c=Personas"class="btn btn-danger m-2" type="submit">atras</a>
                   
                 </div>
                

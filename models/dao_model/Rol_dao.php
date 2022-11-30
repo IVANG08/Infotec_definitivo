@@ -14,14 +14,14 @@
 			try {
 				// Crear la Consulta
 				$sql = 'INSERT INTO roles VALUES (
-							:idRol,
-							:nombreRol
+							:id_rol,
+							:nombre_rol
 						)';
 				// Preparar la BBDD para la consulta
 				$dbh = $this->pdo->prepare($sql);
 				// Vincular los datos del objeto a la consulta de Inserción
-				$dbh->bindValue('idRol',$rol_dto->getCodigoRol());			
-				$dbh->bindValue('nombreRol',$rol_dto->getNombreRol());
+				$dbh->bindValue('id_rol',$rol_dto->getCodigoRol());			
+				$dbh->bindValue('nombre_rol',$rol_dto->getNombreRol());
 				// Ejecutar la consulta
 				$dbh->execute();
 			} catch (Exception $e) {
