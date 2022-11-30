@@ -49,7 +49,7 @@
                     <tbody>
                     <?php foreach ($roles as $rol); ?>
                         <tr>
-                            <td class="text-center"> <?php echo $rol ->getCodigoRol ();?>
+                            <td class="text-center"> <?php echo $rol -> getCodigoRol (); ?>
                     </td>
                     <td class="text-center"> <?php echo $rol ->getNombreRol (); ?>
                     </td>
