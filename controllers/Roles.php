@@ -8,34 +8,26 @@
             $this->rolDao = new Rol_dao;
         }
         public function index(){
+            $roles = $this->rolDao->readRolDao();
             require_once "views/roles/admin/header_dash.php";
-            require_once "views/modules/0_rol/roles_principal_view.php";
+            require_once "views/modules/0_rol/rol.view.php";
             require_once "views/roles/admin/footer.php";
-        }
-        public function crear_rol(){
-            
-            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-                require_once "views/roles/admin/header_dash.php";
-                require_once "views/modules/0_rol/crear_rol.view.php";
-                require_once "views/roles/admin/footer.php";
-                
+            if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id_rol'])) {
+                $result =$this->rolDao->consultarRolDao($_GET['id_rol']); 
+                $rol_dto=new Rol_dto($result[0],$result[1]);   
+                $rol_dto->setCodigoRol($result[0])   ;        
             }
-
             elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // Capturar Datos
                 $rol_dto=new Rol_dto($_POST['id_rol'],$_POST['nombre_rol']);
                 $this->rolDao->createRol($rol_dto);               
-                // Validar los Datos
-                // Crear el Objeto
-                // Comprobar en la base de datos
-                // Redireccionar al Dashboard
-                header("Location: ?c=Roles&a=consultar_rol");
+                header("Location: ?c=Roles");
             }
         }
         public function consultar_rol(){
             $roles = $this->rolDao->readRolDao();
             require_once "views/roles/admin/header_dash.php";
-            require_once "views/modules/0_rol/consultar_rol.view.php";
+            require_once "views/modules/0_rol/rol.view.php";
             require_once "views/roles/admin/footer.php";
         }
         public function actualizar_rol(){

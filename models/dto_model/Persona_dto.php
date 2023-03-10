@@ -24,69 +24,69 @@
 		}
         // Constructor
         public function __construct7($idRol,$idPersona,$nombresPersona,$apellidosPersona,$correoPersona,$telefonoPersona,$passPersona){
-			$this->id_rol = $idRol;
-			$this->id_persona = $idPersona;
-            $this->nombres_persona = $nombresPersona;
-            $this->apellidos_persona = $apellidosPersona;
-            $this->correo_persona = $correoPersona;
-            $this->telefono_persona = $telefonoPersona;
-            $this->pass_persona = $passPersona;
+			$this->idRol = $idRol;
+			$this->idPersona = $idPersona;
+            $this->nombresPersona = $nombresPersona;
+            $this->apellidosPersona = $apellidosPersona;
+            $this->correoPersona = $correoPersona;
+            $this->telefonoPersona = $telefonoPersona;
+            $this->passPersona = $passPersona;
 		}
 
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         
         // Id Rol
         public function setIdRol($idRol){
-            $this->id_rol = $idRol;
+            $this->idRol = $idRol;
         }
         public function getIdRol(){
-            return $this->id_rol;
+            return $this->idRol;
         }
 
         // Id Persona
         public function setIdPersona($idPersona){
-            $this->id_persona = $idPersona;
+            $this->idPersona = $idPersona;
         }
         public function getIdPersona(){
-            return $this->id_persona;
+            return $this->idPersona;
         }
 
         // Nombres Persona
         public function setNombresPersona($nombresPersona){
-            $this->nombres_persona = $nombresPersona;
+            $this->nombresPersona = $nombresPersona;
         }
         public function getNombresPersona(){
-            return $this->nombres_persona;
+            return $this->nombresPersona;
         }
         // Apellidos Persona
         public function setApellidosPersona($apellidosPersona){
-            $this->apellidos_persona = $apellidosPersona;
+            $this->apellidosPersona = $apellidosPersona;
         }
         public function getApellidosPersona(){
-            return $this->apellidos_persona;
+            return $this->apellidosPersona;
         }
         // Correo Persona
         public function setCorreoPersona($correoPersona){
-            $this->correo_persona = $correoPersona;
+            $this->correoPersona = $correoPersona;
         }
         public function getCorreoPersona(){
-            return $this->correo_persona;
+            return $this->correoPersona;
         }
 
         // Telefono Persona
         public function setTelefonoPersona($telefonoPersona){
-            $this->telefono_persona = $telefonoPersona;
+            $this->telefonoPersona = $telefonoPersona;
         }
         public function getTelefonoPersona(){
-            return $this->telefono_persona;
+            return $this->telefonoPersona;
         }
 
         // Pass Persona
         public function setPassPersona($passPersona){
-            $this->pass_persona = $passPersona;
+            $this->passPersona = $passPersona;
         }
         public function getPassPersona(){
-            return $this->pass_persona;
+            return $this->passPersona;
         }
 
        

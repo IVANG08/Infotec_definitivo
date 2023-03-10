@@ -119,7 +119,7 @@
                         <div class="collapse multi-collapse col-12  colum" id="tarjetaPersona">
                             <div class="col-xl-12 col-md-6 mb-4" id="tarjetaPersona">
                                 <div class="card border-left secundario shadow h-100 py-2">
-                                    <a class="card-body" href="?c=Roles&a=crear_rol">
+                                    <a class="card-body" href="?c=Roles">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-uppercase mb-1">Roles
