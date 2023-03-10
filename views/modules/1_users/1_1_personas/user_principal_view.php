@@ -11,7 +11,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Crear Usuario</h5>
                           <p class="card-text"></p>
-                          <a href="?c=Personas&a=crear_personas" class="btn btn-enviar">ir</a>
+                          <a href="user_new.html" class="btn btn-enviar">ir</a>
                         </div>
                       </div>
                     </div>
@@ -20,7 +20,7 @@
                           <div class="card-body">
                             <h5 class="card-title">Modificar Usuario</h5>
                             <p class="card-text"></p>
-                            <a href="?c=Personas&a=actualizar_persona" class="btn btn-enviar">ir</a>
+                            <a href="user_modi.html" class="btn btn-enviar">ir</a>
                           </div>
                         </div>
                       </div>
@@ -29,7 +29,7 @@
                           <div class="card-body">
                             <h5 class="card-title">Buscar Usuario</h5>
                             <p class="card-text"></p>
-                            <a href="?c=Personas&a=consultar_persona" class="btn btn-enviar">ir</a>
+                            <a href="user_view.html" class="btn btn-enviar">ir</a>
                           </div>
                         </div>
                       </div>
