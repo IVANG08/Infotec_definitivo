@@ -52,6 +52,38 @@
  				die($e->getMessage());
  			}
  		}
- 		}
-
+	public function eliminarRolDao($rolid){
+		try {
+		$sql= 'DELETE FROM ROLES WHERE id_rol='.strval($rolid);
+		$dbh = mysqli_query($this->pdo,$sql);
+ 				return $dbh;
+				
+ 			} catch (Exception $e) {
+ 				die($e->getMessage());
+ 			}
+		}
+	public function actualizarRolDao($idmod){
+		try {
+			$sql = 'SELECT * FROM ROLES where id_rol='.$idmod.'';
+			$dbh = mysqli_query($this->pdo,$sql);
+			return mysqli_fetch_row($dbh);
+				
+		} catch (Exception $e) {
+			die($e->getMessage());
+		
+		}
+	}
+	public function modificarRolDao($codigoRol,$nombreRol){
+		try {
+			$sql = "UPDATE ROLES SET nombre_rol='$nombreRol' where id_rol=$codigoRol";
+			$dbh = mysqli_query($this->pdo,$sql);
+			return $dbh;
+		} catch (Exception $e) {
+			die($e->getMessage());
+		
+		}
+	}
+	
+	}
+ 		
 ?> 

@@ -36,8 +36,16 @@
                             <td class="text-center"> 
                                 <?php echo $row['nombre_rol']?>
                             </td>
-                            <td class="text-center"><a class="btn btn-warning" href="?c=roles&actualizar_rol& id_rol=<?php echo $row['id_rol']?>"><i class="bi bi-pencil-square"></i></a></td>
-                            <td  class="text-center"><a class="btn btn-danger" href=" id_rol=<?php echo $row['nombre_rol']?>"><i class="fa fa-trash"></i></a></td>
+                            <td class="text-center">
+                                <a class="btn btn-warning" href="?c=Roles&a=editar_rol& id_rol=<?php echo $row['id_rol']?>">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                            </td>
+                            <td  class="text-center">
+                                <a class="btn btn-danger" href="?c=roles&a=eliminar_rol&id_rol=<?php echo $row['id_rol']?>">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
                             </tr>
                         <?php
                         }
