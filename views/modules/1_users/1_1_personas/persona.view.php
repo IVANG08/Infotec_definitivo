@@ -69,8 +69,8 @@
                             <td class="text-center" type="password">
                                  <?php echo $row['pass_persona']?>
                             </td>
-                            <td class="text-center"><a class="btn btn-warning" href="?c=roles&actualizar_rol& id_personas=<?php echo $row['id_personas']?>"><i class="bi bi-pencil-square"></i></a></td>
-                            <td  class="text-center"><a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a></td>
+                            <td class="text-center"><a class="btn btn-warning" href="?c=personas&a=editar_persona& id_personas=<?php echo $row['id_personas']?>"><i class="bi bi-pencil-square"></i></a></td>
+                            <td  class="text-center"><a class="btn btn-danger" href="?c=personas&a=eliminar_persona& id_personas=<?php echo $row['id_personas']?>"><i class="fa fa-trash"></i></a></td>
                             </tr>
                         <?php
                         }

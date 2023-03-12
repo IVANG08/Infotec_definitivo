@@ -17,7 +17,7 @@ body {
     transition: marging-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
     margin-right: 15px;
     min-height: 100wh;
-    background: url(../img/image-fondo-oscuro.jpg);
+    
     background-position: center center;
     background-repeat:no-repeat ;
     background-size:cover ;

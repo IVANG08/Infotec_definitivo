@@ -7,11 +7,11 @@
         public function __construct(){
             $this->rolDao = new Rol_dao;
         }
+    
         public function index(){
+            
             $roles = $this->rolDao->readRolDao();
-            require_once "views/roles/admin/header_dash.php";
-            require_once "views/modules/0_rol/rol.view.php";
-            require_once "views/roles/admin/footer.php";
+          
             if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id_rol'])) {
                 $result =$this->rolDao->consultarRolDao($_GET['id_rol']); 
                 $rol_dto=new Rol_dto($result[0],$result[1]);   
@@ -23,17 +23,41 @@
                 $this->rolDao->createRol($rol_dto);               
                 header("Location: ?c=Roles");
             }
+            require_once "views/roles/admin/header_dash.php";
+            require_once "views/modules/0_rol/rol.view.php";
+            require_once "views/roles/admin/footer.php";
         }
-        public function consultar_rol(){
+        public function eliminar_rol(){ 
+            if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+                // Capturar Datos
+                $this->rolDao->eliminarRolDao($_GET['id_rol']); 
+            }
             $roles = $this->rolDao->readRolDao();
             require_once "views/roles/admin/header_dash.php";
             require_once "views/modules/0_rol/rol.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        public function actualizar_rol(){
+        
+     
+        public function editar_rol(){
+           
+            
+            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+                $editrol =$this->rolDao->actualizarRolDao($_GET['id_rol']); 
+                
+            }
             require_once "views/roles/admin/header_dash.php";
-            require_once "views/modules/0_rol/actualizar_rol.view.php";
+            require_once "views/modules/0_rol/rol.editar.php";
             require_once "views/roles/admin/footer.php";
         }
-    }
+        public function modificar_rol(){
+           
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+               
+                $this->rolDao->modificarRolDao($_POST['id_rol'],$_POST['nombre_rol']);               
+                header("Location: ?c=Roles");
+            }
+            
+        }
+}
 ?>
