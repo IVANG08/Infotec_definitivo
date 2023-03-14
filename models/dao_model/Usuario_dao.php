@@ -1,5 +1,5 @@
 <?php 
-	class Persona_dao{
+	class Usuario_dao{
 		private $pdo;
 		public function __construct(){
 			try {
@@ -9,18 +9,18 @@
 			}
 		}		
 
-		# Registrar o Crear persona
-		public function createPersona($persona_dto){
+		# Registrar o Crear usuario
+		public function createUsuario($usuario_dto){
 			try {
 				// Crear la Consulta
-				$sql = 'INSERT INTO personas VALUES (
-							'.$persona_dto->getIdRol().',
-							"'.$persona_dto->getIdPersona().'",
-							"'.$persona_dto->getNombresPersona().'",
-							"'.$persona_dto->getApellidosPersona().'",
-							"'.$persona_dto->getCorreoPersona().'",
-							"'.$persona_dto->getTelefonoPersona().'",
-							"'.$persona_dto->getPassPersona().'"
+				$sql = 'INSERT INTO usuarios VALUES (
+							'.$usuario_dto->getIdRol().',
+							"'.$usuario_dto->getIdUsuario().'",
+							"'.$usuario_dto->getNombresUsuario().'",
+							"'.$usuario_dto->getApellidosUsuario().'",
+							"'.$usuario_dto->getCorreoUsuario().'",
+							"'.$usuario_dto->getTelefonoUsuario().'",
+							"'.$usuario_dto->getPassUsuario().'"
 						)';
 						
 
@@ -31,12 +31,12 @@
 				die("....".$e->getMessage());	
 			}
 		}
-		public function readPersonaDao(){
+		public function readUsuarioDao(){
 			try {
 				// Crear un Arreglo Vacío
 							$rolList = [];
 					// Asignar una consulta al atributo $sql
-							$sql = 'SELECT pass_persona,p.telefono_persona,p.correo_persona,p.apellidos_persona,p.nombres_persona,p.id_personas,r.nombre_rol FROM personas p inner join roles r on r.id_rol=p.id_rol';
+							$sql = 'SELECT pass_usuario,u.telefono_usuario,u.correo_usuario,u.apellidos_usuario,u.nombres_usuario,u.id_usuario,r.nombre_rol FROM usuarios u inner join roles r on r.id_rol=u.id_rol';
 					// Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
 							$dbh = mysqli_query($this->pdo,$sql);
 								 return $dbh;
@@ -49,7 +49,7 @@
 	// Crear un Arreglo Vacío
 			$rolList = [];
 	// Asignar una consulta al atributo $sql
-			$sql = 'SELECT * FROM personas where id_personas='.$idper.'';
+			$sql = 'SELECT * FROM usuarios where id_usuario='.$idper.'';
 	// Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
 		$dbh = mysqli_query($this->pdo,$sql);
 					 return mysqli_fetch_row($dbh);
@@ -57,9 +57,9 @@
 					 die($e->getMessage());
 				 }
 			 }	
-		public function eliminarPersonaDao($perid){
+		public function eliminarUsuarioDao($perid){
 		try {
-		$sql= 'DELETE FROM personas WHERE id_personas='.strval($perid);
+		$sql= 'DELETE FROM usuarios WHERE id_usuario='.strval($perid);
 		$dbh = mysqli_query($this->pdo,$sql);
  				return $dbh;
 				
@@ -67,9 +67,9 @@
  				die($e->getMessage());
  			}
 		}
-		public function actualizarPersonaDao($idmod){
+		public function actualizarUsuarioDao($idmod){
 			try {
-				$sql = 'SELECT * FROM personas where id_personas='.$idmod.'';
+				$sql = 'SELECT * FROM usuarios where id_usuario='.$idmod.'';
 				$dbh = mysqli_query($this->pdo,$sql);
 				return mysqli_fetch_row($dbh);
 					
@@ -78,14 +78,13 @@
 			
 			}
 		}
-		public function modificarPersonaDao($idRol,$idPersona,$nombresPersona,$apellidosPersona,$correoPersona,$telefonoPersona,$passPersona){
+		public function modificarUsuarioDao($idRol,$idUsuario,$nombresUsuario,$apellidosUsuario,$correoUsuario,$telefonoUsuario,$passUsuario){
 			try {
-				$sql = "UPDATE PERSONAS SET id_rol ='$idRol', nombres_persona = '$nombresPersona',apellidos_persona = '$apellidosPersona',correo_persona = '$correoPersona',telefono_persona = '$telefonoPersona', pass_persona = '$passPersona' where id_personas = $idPersona";
+				$sql = "UPDATE usuarios SET id_rol ='$idRol', nombres_usuario = '$nombresUsuario',apellidos_usuario = '$apellidosUsuario',correo_usuario = '$correoUsuario',telefono_usuario = '$telefonoUsuario', pass_usuario = '$passUsuario' where id_usuario = $idUsuario";
 				$dbh = mysqli_query($this->pdo,$sql);
-				return $dbh;
-			} catch (Exception $e) {
-				die($e->getMessage());
-			
+			return $dbh;
+		} catch (Exception $e) {
+			die($e->getMessage());
 			}
 		}
 	}

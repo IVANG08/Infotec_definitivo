@@ -1,12 +1,12 @@
 <body>
     <div class="container">
-    <h1 class="titulos mt-1">Personas</h1>
+    <h1 class="titulos mt-1">Usuario</h1>
     <hr>
         <div class="row tablas">
            
             <div class="col-md-3">
                 
-                <form method="post" action="?c=Personas" class="row g-3 needs-validation" novalidate>
+                <form method="post" action="?c=Usuario" class="row g-3 needs-validation" novalidate>
                     <select class="form-control mb-3" name="id_rol" placeholder="Rol" >
                     <option selected>Elija el rol</option>
                     <?php 
@@ -17,12 +17,12 @@
                         }
                          ?>
                     </select>
-                    <input type="int" class="form-control mb-3" name="id_personas" placeholder="# Identificación">
-                    <input type="text" class="form-control mb-3" name="nombres_persona" placeholder="Nombres">
-                    <input type="text" class="form-control mb-3" name="apellidos_persona" placeholder="Apellidos">
-                    <input type="text" class="form-control mb-3" name="correo_persona" placeholder="Correo">
-                    <input type="text" class="form-control mb-3" name="telefono_persona" placeholder="Telefono">
-                    <input type="password" class="form-control mb-3" name="pass_persona" placeholder="Contraseña">
+                    <input type="int" class="form-control mb-3" name="id_usuario" placeholder="# Identificación">
+                    <input type="text" class="form-control mb-3" name="nombres_usuario" placeholder="Nombres">
+                    <input type="text" class="form-control mb-3" name="apellidos_usuario" placeholder="Apellidos">
+                    <input type="text" class="form-control mb-3" name="correo_usuario" placeholder="Correo">
+                    <input type="text" class="form-control mb-3" name="telefono_usuario" placeholder="Telefono">
+                    <input type="password" class="form-control mb-3" name="pass_usuario" placeholder="Contraseña">
                     <input type="submit" class="btn btn-enviar mt-2 ">
                 </form>
 
@@ -45,7 +45,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                        while($row=mysqli_fetch_array($persona)){
+                        while($row=mysqli_fetch_array($usuario)){
                         ?>
                         
                         <tr>
@@ -53,24 +53,24 @@
                                  <?php echo $row['nombre_rol']?>
                             </td>
                             <td class="text-center"> 
-                                <?php echo $row['id_personas']?>
+                                <?php echo $row['id_usuario']?>
                             </td>
                             <td class="text-center">
-                                 <?php echo $row['nombres_persona']?>
+                                 <?php echo $row['nombres_usuario']?>
                             </td>
                             <td class="text-center"> 
-                                <?php echo $row['apellidos_persona']?>
+                                <?php echo $row['apellidos_usuario']?>
                             </td><td class="text-center">
-                                 <?php echo $row['correo_persona']?>
+                                 <?php echo $row['correo_usuario']?>
                             </td>
                             <td class="text-center"> 
-                                <?php echo $row['telefono_persona']?>
+                                <?php echo $row['telefono_usuario']?>
                             </td>
                             <td class="text-center" type="password">
-                                 <?php echo $row['pass_persona']?>
+                                 <?php echo $row['pass_usuario']?>
                             </td>
-                            <td class="text-center"><a class="btn btn-warning" href="?c=personas&a=editar_persona& id_personas=<?php echo $row['id_personas']?>"><i class="bi bi-pencil-square"></i></a></td>
-                            <td  class="text-center"><a class="btn btn-danger" href="?c=personas&a=eliminar_persona& id_personas=<?php echo $row['id_personas']?>"><i class="fa fa-trash"></i></a></td>
+                            <td class="text-center"><a class="btn btn-warning" href="?c=Usuario&a=editar_usuario& id_usuario=<?php echo $row['id_usuario']?>"><i class="bi bi-pencil-square"></i></a></td>
+                            <td  class="text-center"><a class="btn btn-danger" href="?c=Usuario&a=eliminar_usuario& id_usuario=<?php echo $row['id_usuario']?>"><i class="fa fa-trash"></i></a></td>
                             </tr>
                         <?php
                         }
