@@ -27,9 +27,9 @@
 				  </a>
 				  <div class="dropdown-menu dropdown-menu-right">
 					<a class="dropdown-item" href="#">Perfil</a>
-					<a class="dropdown-item" href="#">Configuracion</a>
+					<a class="dropdown-item" href="?c=Usuario">Configuracion Usuarios</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item text-danger" href="inicio.html">Cerrar Sesión</a>
+					<a class="dropdown-item text-danger" href="c=?Landing">Cerrar Sesión</a>
 				  </div>
 				</div>
 		</nav>
@@ -41,27 +41,34 @@
 			<div class="options_menu" id="">
 				<a href="?c=Dashboard">
 					<div class="option">
-						<i class= "fas fa-home" title="Productos"></i>
+						<i class= "fas fa-home" title="Inicio"></i>
 						<h4 class="text-center">Inicio</h4>
 					</div>
 					</a>
 				<a href="?c=Roles">
 					<div class="option">
-					<i class="fas fa-clipboard-user"></i>
+					<i class="fas fa-clipboard-user " title="Roles"></i>
 					<h4>Roles</h4>
 					</div>
 				</a>
 				</a>
-				<a href="?c=Persona">
+				<a href="?c=Usuario">
 					<div class="option">
-						<i class="fas fa-user-tie"></i>
-					<h4>Personas</h4>
+						<i class="fas fa-user-tie" title="Usuarios"></i>
+					<h4>Usuarios</h4>
 					</div>
 				</a>
 				</a>
-				<a href="modules/1_users/user_principal.html">
+				<a href="?c=Cliente">
 					<div class="option">
-					<i class="fas fa-motorcycle align-self-center"></i>
+					<i class="bi bi-person-lines-fill" title="Clientes"></i>
+					<h4>Clientes</h4>
+					</div>
+				</a>
+				</a>
+				<a href="?c=Vehiculo">
+					<div class="option">
+					<i class="fas fa-motorcycle align-self-center" title="Vehiculos"></i>
 					<h4>Vehiculos</h4>
 					</div>
 				</a>

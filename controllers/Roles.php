@@ -7,11 +7,8 @@
         public function __construct(){
             $this->rolDao = new Rol_dao;
         }
-    
         public function index(){
-            
             $roles = $this->rolDao->readRolDao();
-          
             if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id_rol'])) {
                 $result =$this->rolDao->consultarRolDao($_GET['id_rol']); 
                 $rol_dto=new Rol_dto($result[0],$result[1]);   
@@ -43,8 +40,7 @@
            
             
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-                $editrol =$this->rolDao->actualizarRolDao($_GET['id_rol']); 
-                
+                $editrol =$this->rolDao->actualizarRolDao($_GET['id_rol']);        
             }
             require_once "views/roles/admin/header_dash.php";
             require_once "views/modules/0_rol/rol.editar.php";

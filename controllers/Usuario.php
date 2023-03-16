@@ -41,15 +41,15 @@
                 }
 
                 elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-                    if ($_POST['pass_usuario'] == $_POST['pass2_usuario']) {                    
+                                       
                         $Usuario_dto=new Usuario_dto($_POST['id_rol'],$_POST['id_usuario'],$_POST['nombres_usuario'],$_POST['apellidos_usuario'],$_POST['correo_usuario'],$_POST['telefono_usuario'],$_POST['pass_usuario']);
                         $this->usuarioDao->createUsuario($Usuario_dto);
                         header("Location: ?c=Usuario&a=crear_usuario");
                     } else {
                         header("Location: ?c=Usuario&a=crear_usuario");
                     }
-                    
-                }               
+                
+                               
             }
             public function eliminar_usuario(){ 
                 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
