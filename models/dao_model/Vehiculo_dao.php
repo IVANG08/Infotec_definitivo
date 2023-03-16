@@ -25,7 +25,7 @@
         // leer datos
         public function readVehiculoDao(){
             try{
-                $sql = 'SELECT  FROM vehiculos';
+                $sql = 'SELECT v.placa_vehiculo, c.nombre_cliente FROM vehiculos v inner join clientes c on v.id_cliente=c.id_cliente ';
                 $dbh = mysqli_query($this->pdo,$sql);
                 return $dbh;
             } catch (Exception $e) {
@@ -33,11 +33,11 @@
             }
         }
         // consulta de datos
-        public function consultarVehiculoDao($id){
+        public function consultarVehiculoDao($idplaca){
             try {
                
                 // Asignar una consulta al atributo $sql
-                        $sql = 'SELECT v.placa_vehiculo,v.id_cliente,p.id_persona,c.id_persona,c.id_cliente FROM vehiculos v inner join clientes c on c.id_cliente=v.id_cliente';
+                        $sql = 'SELECT * from vehiculos where placa_vehiculo='.$idplaca.'';
                 // Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
                     $dbh = mysqli_query($this->pdo,$sql);
                                  return mysqli_fetch_row($dbh);
@@ -45,8 +45,39 @@
                                  die($e->getMessage());
                              } 
         }
+        public function eliminarVehiculoDao($placavehiculo){
+            try{
+                $sql='DELETE FROM vehiculos WHERE placa_vehiculo='.strval($placavehiculo);
+                $dbh = mysqli_query($this->pdo,$sql);
+                return $dbh;
+               
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+        public function actualizarVehiculoDao($vehimod){
+            try {
+                $sql = 'SELECT * FROM vehiculos where placa_vehiculo=' .$vehimod.'';
+                $dbh = mysqli_query($this->pdo,$sql);
+				return mysqli_fetch_row($dbh);
+					
+			} catch (Exception $e) {
+				die($e->getMessage());
+            }
+        }
+        public function modificarVehiculoDao($placavehiculo,$idclientev){
+            try{
+                $sql = "UPDATE vehiculos SET
+            placa_vehiculo = '$placavehiculo' where id_cliente = $idclientev";
+            $dbh = mysqli_query($this->pdo,$sql);
+			return $dbh;
+		} catch (Exception $e) {
+			die($e->getMessage());
 
         }
+
+        }
+    }
     
 
 
