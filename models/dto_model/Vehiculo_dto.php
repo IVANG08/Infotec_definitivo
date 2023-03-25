@@ -17,22 +17,22 @@ class Vehiculo_dto{
 		}
         // Constructor
         public function __construct8($placavehiculo,$idclientev){
-			$this->placa_vehiculo = $placavehiculo;
-			$this->id_cliente = $idclientev;
+			$this->placavehiculo = $placavehiculo;
+			$this->idclientev= $idclientev;
 		}
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         
         // Código Rol
         public function setPlaca($placavehiculo){
-            $this->placa_vehiculo = $placavehiculo;
+            $this->placavehiculo = $placavehiculo;
         }
         public function getPlaca(){
-            return $this->placa_vehiculo;
+            return $this->placavehiculo;
         }
 
         // Nombre Rol
         public function setCliente($idclientev){
-            $this->id_cliente = $idclientev;
+            $this->idclientev= $idclientev;
         }
         public function getCliente(){
             return $this->id_cliente;

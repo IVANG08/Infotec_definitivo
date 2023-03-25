@@ -17,6 +17,7 @@
             elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // Capturar Datos
                 $categoria_dto=new Categoria_dto($_POST['id_categoria'],$_POST['nombre_categoria']);
+                
                 $this->categoriaDao->createCategoria($categoria_dto);               
                 header("Location: ?c=Categoria");
             }
@@ -36,7 +37,9 @@
         } 
         public function editar_categoria(){
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-                $editcate=$this->categoriaDao->actualizarCategoriaDao($_GET['id_categoria']);        
+                $editcate=$this->categoriaDao->actualizarCategoriaDao($_GET['id_categoria']);
+                
+
             }
             require_once "views/roles/admin/header_dash.php";
             require_once "views/modules/2_products/2_1categoria/categoria.editar.php";
@@ -45,6 +48,7 @@
          public function modificar_categoria(){
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                
+
                 $this->categoriaDao->modificarCategoriaDao($_POST['id_categoria'],$_POST['nombre_categoria']);               
                 header("Location: ?c=Categoria");
             }

@@ -12,16 +12,19 @@ class Cliente_dao{
 		// Registrar o Crear cliente
 		public function createCliente($cliente_dto){
             try{
-                $sql = 'INSERT INTO clientes VALUE (
+                $sql = 'INSERT INTO clientes (`id_cliente`, `identificacion_cliente`, `nombre_cliente`, `apellido_cliente`, `telefono_cliente`, `correo_cliente`) VALUE (
                     '.$cliente_dto->getIdCliente().',
-                    "'.$cliente_dto->getIdentificacionCliente().'",
+                    .'.$cliente_dto->getIdentificacionCliente().',
                     "'.$cliente_dto-> getNombreCliente().'",
                     "'.$cliente_dto-> getApellidoCliente().'",
-                    "'.$cliente_dto-> getTelefonoCliente().'",
+                    '.$cliente_dto-> getTelefonoCliente().',
                     "'.$cliente_dto-> getCorreoCliente().'"
                     )';
+                   
+                    
                     // Preparar la BBDD para la consulta
                 mysqli_query($this->pdo,$sql);
+
                 
 			} catch (Exception $e) {
 				die("....".$e->getMessage());	
@@ -68,9 +71,10 @@ class Cliente_dao{
 		
             }
         }
-        public function modificarClienteDao($idCliente, $identificacionCliente,$nombreCliente,  $apellidoCliente,$telefonoCliente,     $correoCliente){
+        public function modificarClienteDao($idCliente, $identificacionCliente,$nombreCliente,  $apellidoCliente,$telefonoCliente,$correoCliente){
             try{
                 $sql = "UPDATE CLIENTES SET identificacion_cliente='$identificacionCliente', nombre_cliente='$nombreCliente', apellido_cliente='$apellidoCliente',telefono_cliente='$telefonoCliente',correo_cliente='$correoCliente' WHERE id_cliente=$idCliente";
+               
                 $dbh = mysqli_query($this->pdo,$sql);
 			return $dbh;
 		} catch (Exception $e) {

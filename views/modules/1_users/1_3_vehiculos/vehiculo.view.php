@@ -41,7 +41,7 @@
                         
                         <tr>
                             <td class="text-center">
-                                 <?php echo $row['nombre_cliente']?>
+                                 <?php echo $row['nombre_cliente']?>  <?php echo $row['apellido_cliente']?>
                             </td>
                             <td class="text-center"> 
                                 <?php echo $row['placa_vehiculo']?>

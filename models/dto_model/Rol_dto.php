@@ -18,26 +18,26 @@
 		}
         // Constructor
         public function __construct2($codigoRol,$nombreRol){
-			$this->id_rol = $codigoRol;
-			$this->nombre_rol = $nombreRol;
+			$this->codigoRol = $codigoRol;
+			$this->nombreRol = $nombreRol;
 		}
 
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         
         // Código Rol
         public function setCodigoRol($codigoRol){
-            $this->id_rol = $codigoRol;
+            $this->codigoRol = $codigoRol;
         }
         public function getCodigoRol(){
-            return $this->id_rol;
+            return $this->codigoRol;
         }
 
         // Nombre Rol
         public function setNombreRol($nombreRol){
-            $this->nombre_rol = $nombreRol;
+            $this->nombreRol = $nombreRol;
         }
         public function getNombreRol(){
-            return $this->nombre_rol;
+            return $this->nombreRol;
         }
 
 

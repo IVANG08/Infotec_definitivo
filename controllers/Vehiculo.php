@@ -18,7 +18,8 @@
                 
                 $result= $this->vehiculoDao->consultarVehiculoDao($_GET['id_cliente']);
                 $Vehiculo_dto=new Vehiculo_dto($result[0],$result[1]);
-                $Vehiculo_dto->setCliente($result[0]);}
+                $Vehiculo_dto->setCliente($result[0]);
+            }
                 elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
                     $Vehiculo_dto=new Vehiculo_dto($_POST['placa_vehiculo'],$_POST['id_cliente']);
                     $this->vehiculoDao->createVehiculo($Vehiculo_dto);
@@ -46,8 +47,9 @@
             if($_SERVER['REQUEST_METHOD'] == 'GET'){
                 $this->vehiculoDao->eliminarVehiculoDao($_GET['placa_vehiculo']);
             }
-            $vehiculo =$this->vehiculoDao->readVehiculoDao();
-            $cliente = $this->clienteDao->readClienteDao();
+             $cliente = $this->clienteDao->readClienteDao();
+             $vehiculo =$this->vehiculoDao->readVehiculoDao();
+           
             require_once "views/roles/admin/header_dash.php";
             require_once "views/modules/1_users/1_3_vehiculos/vehiculo.view.php";
             require_once "views/roles/admin/footer.php";
@@ -64,7 +66,6 @@
     }
     public function modificar_vehiculo(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            
             $this->vehiculoDao->modificarVehiculoDao($_POST['placa_vehiculo'],$_POST['id_cliente']);
             header("Location: ?c=Vehiculo");
     }

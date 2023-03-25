@@ -357,6 +357,12 @@ table {
     background-color:  #2D93C4;
     color: #fff;;
   }
-
+  .centarboton {
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    align-content: center;
+    margin-top: 15px;
+    margin: 10px;
+  }
 
   

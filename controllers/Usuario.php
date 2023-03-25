@@ -14,8 +14,7 @@
             public function index(){
                 $usuario = $this->usuarioDao->readUsuarioDao();
                 $roles = $this->rolDao->readRolDao();
-
-                
+                        
                 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id_rol'])){
                     $result =$this->usuarioDao->consultarRolDao($_GET['id_rol']);
                     $Usuario_dto=new Usuario_dto($result[0],$result[1]);

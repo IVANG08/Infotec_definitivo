@@ -13,6 +13,7 @@
                     '.$categoria_dto->getIdCategoria().',
                     "'.$categoria_dto->getNombreCategoria().'"
                     )';
+                    
                  mysqli_query($this->pdo,$sql);
                 
                 } catch (Exception $e) {
@@ -51,8 +52,9 @@
         }
         public function actualizarCategoriaDao($catmod){
             try{
-                $sql = 'SELECT * FROM categoria where id_categoria='.$catmod.'';
-			$dbh = mysqli_query($this->pdo,$sql);
+               $sql = 'SELECT * FROM categoria where id_categoria='.$catmod.'';
+			
+               $dbh = mysqli_query($this->pdo,$sql);
 			return mysqli_fetch_row($dbh);
 				
 		} catch (Exception $e) {
