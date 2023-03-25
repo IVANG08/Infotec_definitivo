@@ -8,7 +8,7 @@
                 <form class="row g-3 needs-validation" method="post" action="?c=Cliente&a=modificar_cliente"novalidate>  
                 <div class="col-md-2">
                         <label for="id_cliente" class="form-label">Id Cliente</label>
-                        <input type="text" class="form-control" id="id_cliente"  required name="id_cliente" placeholder="Id Cliente" value="<?php echo $editcliente[0]?>" readonly>
+                        <input type="text" class="form-control" id="id_cliente"  required name="id_cliente" placeholder="Id Cliente" value="<?php echo $editcliente[1]?>" readonly>
                         </div>    
                     <div class="col-md-4">
                         <label for="identificacion_cliente" class="form-label">Identificacion</label>

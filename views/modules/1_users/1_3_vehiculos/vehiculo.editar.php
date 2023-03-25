@@ -14,7 +14,7 @@
                         while($row=mysqli_fetch_array($cliente)){
                             if($row['id_cliente']==$edivehi[1]){
                             ?>
-                            <option value='<?php echo $row['id_cliente']?>'> <?php echo $row['nombre_Cliente']?></option>
+                            <option value='<?php echo $row['id_cliente']?>'> <?php echo $row['nombre_cliente']?></option>
                             <?php
                             }else{
                             ?>

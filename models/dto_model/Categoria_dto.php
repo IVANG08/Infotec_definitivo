@@ -11,25 +11,26 @@ class Categoria_dto{
 			if (method_exists($this, $f='__construct'.$i)) {
 				call_user_func_array(array($this, $f), $a);
 			}
+            
 		}
-        public function __construct10($idCategoria,$nombreCategoria){
-            $this ->id_categoria =$idCategoria;
-            $this ->nombre_categoria =$nombreCategoria;
+        public function __construct2($idCategoria,$nombreCategoria){
+            $this ->idCategoria =$idCategoria;
+            $this ->nombreCategoria =$nombreCategoria;
         }
 
         //Id categoria
         public function setIdCategoria($idCategoria){
-            $this->id_categoria=$idCategoria;
+            $this->idCategoria=$idCategoria;
         }
         public function getIdCategoria(){
-            return $this->id_categoria;
+            return $this->idCategoria;
         }
         //Nombre categoria
         public function setNombreCategoria($nombreCategoria){
-            $this ->nombre_categoria =$nombreCategoria;
+            $this ->nombreCategoria =$nombreCategoria;
         }
         public function getNombreCategoria(){
-            return  $this ->nombre_categoria;
+            return  $this ->nombreCategoria;
         }
     }
 ?>

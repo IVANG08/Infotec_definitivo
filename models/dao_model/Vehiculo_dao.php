@@ -25,7 +25,7 @@
         // leer datos
         public function readVehiculoDao(){
             try{
-                $sql = 'SELECT v.placa_vehiculo, c.nombre_cliente FROM vehiculos v inner join clientes c on v.id_cliente=c.id_cliente ';
+                $sql = 'SELECT v.placa_vehiculo, c.nombre_cliente, c.apellido_cliente FROM vehiculos v inner join clientes c on v.id_cliente=c.id_cliente ';
                 $dbh = mysqli_query($this->pdo,$sql);
                 return $dbh;
             } catch (Exception $e) {
@@ -57,8 +57,9 @@
         }
         public function actualizarVehiculoDao($vehimod){
             try {
-                $sql = 'SELECT * FROM vehiculos where placa_vehiculo=' .$vehimod.'';
+                $sql = 'SELECT * FROM vehiculos where placa_vehiculo="' .$vehimod.'"';
                 $dbh = mysqli_query($this->pdo,$sql);
+               
 				return mysqli_fetch_row($dbh);
 					
 			} catch (Exception $e) {
@@ -68,7 +69,8 @@
         public function modificarVehiculoDao($placavehiculo,$idclientev){
             try{
                 $sql = "UPDATE vehiculos SET
-            placa_vehiculo = '$placavehiculo' where id_cliente = $idclientev";
+            id_cliente = '$idclientev' where placa_vehiculo = '$placavehiculo' ";
+            
             $dbh = mysqli_query($this->pdo,$sql);
 			return $dbh;
 		} catch (Exception $e) {

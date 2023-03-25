@@ -17,7 +17,9 @@
             elseif($_SERVER['REQUEST_METHOD'] == 'POST'){        
                 //captura de datos
                 $cliente_dto=new Cliente_dto($_POST['id_cliente'],$_POST['identificacion_cliente'],$_POST['nombre_cliente'],$_POST['apellido_cliente'],$_POST['telefono_cliente'],$_POST['correo_cliente']);
+                
                 $this->clienteDao->createCliente($cliente_dto);
+                
                 header("Location: ?c=Cliente");
             }
             require_once "views/roles/admin/header_dash.php";
@@ -49,6 +51,7 @@
             
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
+               
                 $this->clienteDao->modificarClienteDao($_POST
                 ['id_cliente'],$_POST['identificacion_cliente'],$_POST['nombre_cliente'],$_POST['apellido_cliente'],$_POST['telefono_cliente'],$_POST['correo_cliente']);
                 header("Location: ?c=Cliente");
