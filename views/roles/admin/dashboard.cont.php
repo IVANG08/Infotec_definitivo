@@ -214,23 +214,7 @@
                                     </div>
                                 </a>
                             </div>
-                            </div>
-                            <div class="col-xl-12 col-md-6 mb-4">
-                                <div class="card border-left secundario shadow h-100 py-2">
-                                    <a class="card-body">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold  text-uppercase mb-1">
-                                                    Reportes</div>
-                                                
-                                            </div>
-                                            <div class="col-auto">
-                                                <i class="bi bi-clipboard2-data-fill fa-2x text-gray-300"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                </div>
+                            
             </div>
         </div>
     </div>

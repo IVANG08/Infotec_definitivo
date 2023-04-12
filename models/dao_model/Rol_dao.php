@@ -28,8 +28,6 @@
 // 		# Consultar Roles
 	public function readRolDao(){
 		try {
-// Crear un Arreglo Vacío
-			$rolList = [];
 	// Asignar una consulta al atributo $sql
 			$sql = 'SELECT * FROM ROLES';
 	// Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
@@ -41,8 +39,6 @@
  		}
 	public function consultarRolDao($id){
 		try {
-// Crear un Arreglo Vacío
-		$rolList = [];
 // Asignar una consulta al atributo $sql
 		$sql = 'SELECT * FROM ROLES where id_rol='.$id.'';
 // Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
@@ -56,8 +52,7 @@
 		try {
 		$sql= 'DELETE FROM ROLES WHERE id_rol='.strval($rolid);
 		$dbh = mysqli_query($this->pdo,$sql);
- 				return $dbh;
-				
+ 				return $dbh;	
  			} catch (Exception $e) {
  				die($e->getMessage());
  			}

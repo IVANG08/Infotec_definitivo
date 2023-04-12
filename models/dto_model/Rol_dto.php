@@ -1,13 +1,9 @@
 <?php
-
     class Rol_dto{
-        
         /* ATRIBUTOS */        
         private $codigoRol;
         private $nombreRol;
-        
         /* SOBRECARGA DE CONSTRUCTORES */
-        
         // Constructor de Constructores
 		public function __construct(){
 			$a = func_get_args();
@@ -21,9 +17,7 @@
 			$this->codigoRol = $codigoRol;
 			$this->nombreRol = $nombreRol;
 		}
-
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
-        
         // Código Rol
         public function setCodigoRol($codigoRol){
             $this->codigoRol = $codigoRol;
@@ -31,7 +25,6 @@
         public function getCodigoRol(){
             return $this->codigoRol;
         }
-
         // Nombre Rol
         public function setNombreRol($nombreRol){
             $this->nombreRol = $nombreRol;

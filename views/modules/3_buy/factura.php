@@ -31,7 +31,11 @@
                 <label for="placa_vehiculo" class="form-label">Placa Vehiculo </label>
                 <input type="text" class="form-control" id="placa_vehiculo"  required name="placa_vehiculo" placeholder="Placa Vehiculo" value=" ">
                 </div>
-            
+                <div class="centarboton">
+                    <td  class="text-center"><a class="btn btn-secondary boton-agpro" href="?c=Factura&a=crearFactura"     style="border-top-width: 6px;margin-bottom: 5px;"><i class="bi bi-plus-circle-dotted "></i>Agregar producto</a></td>
+                    
+                    
+                                    </div>
 <table    style="margin-top: 9px;" >
     <thead>
         <tr>
@@ -42,28 +46,19 @@
         </tr>
     </thead>
     <tbody>
+       
         <tr>
-            <td>Producto 1</td>
-            <td>2</td>
-            <td>$10.00</td>
-            <td>$20.00</td>
-        </tr>
-        <tr>
-            <td>Producto 2</td>
-            <td>1</td>
-            <td>$15.00</td>
-            <td>$15.00</td>
-        </tr>
-        <tr>
-            <td>Producto 3</td>
-            <td>3</td>
-            <td>$5.00</td>
-            <td>$15.00</td>
+        <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
         </tr>
         <tr>
             <td colspan="3" class="total">Total</td>
-            <td>$50.00</td>
+            <td></td>
         </tr>
+        
     </tbody>
 </table>
 <input type="submit" class="btn btn-enviar mt-2 ">

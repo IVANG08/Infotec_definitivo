@@ -3,18 +3,14 @@
     <h1 class="titulos mt-1">Roles</h1>
     <hr>
         <div class="row tablas">
-           
             <div class="col-md-4">
-                
                 <form method="post" action="?c=Roles" class="row g-3 needs-validation" novalidate>
                     <input type="int" class="form-control mb-3" name="id_rol" placeholder="Codigo Rol">
                     <input type="text" class="form-control" id="validationCustom02" value="" required name="nombre_rol" placeholder="Nombre rol">
                     <input type="submit" class="btn btn-enviar mt-2 ">
                 </form>
-
             </div>
             <div class="div col-md-8">
-                
                 <table class="table justify-content-center col-11 ">
                     <thead>
                         <tr class="text-center">
@@ -28,7 +24,6 @@
                         <?php 
                         while($row=mysqli_fetch_array($roles)){
                         ?>
-                        
                         <tr>
                             <td class="text-center">
                                  <?php echo $row['id_rol']?>
@@ -49,10 +44,9 @@
                             </tr>
                         <?php
                         }
-                         ?>
-                           
+                         ?>  
                         </tbody>
-            </div>
+</div>
         </div>
     </div>
 

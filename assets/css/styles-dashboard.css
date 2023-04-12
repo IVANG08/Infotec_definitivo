@@ -364,5 +364,36 @@ table {
     margin-top: 15px;
     margin: 10px;
   }
+  .boton-factura {
+  display: flex;
+  justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 25px;
+    border-block-start: 15px;
+    border-top-width: 6px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    height: 52.8px;
+    padding-right: 20px;
+}
+.facturai {
+    font-size: 30px;
+}
 
-  
+.boton-agpro {
+    display: flex;
+    justify-content: space-around;
+      align-content: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      border-block-start: 15px;
+      border-top-width: 6px;
+      margin-bottom: 5px;
+      padding-left: 20px;
+      height: 52.8px;
+      width: 300px;
+      padding-right: 20px;
+      font-size: 20px;
+    }
