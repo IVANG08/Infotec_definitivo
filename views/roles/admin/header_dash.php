@@ -30,7 +30,7 @@
 					<a class="dropdown-item" href="#">Perfil</a>
 					<a class="dropdown-item" href="?c=Usuario">Configuracion Usuarios</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item text-danger" href="c=?Landing">Cerrar Sesión</a>
+					<a class="dropdown-item text-danger" href="?c=Login">Cerrar Sesión</a>
 				  </div>
 				</div>
 		</nav>

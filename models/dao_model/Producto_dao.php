@@ -13,7 +13,7 @@
         try {
             $sql='INSERT INTO productos VALUES(
                 '.$producto_dto->getIdCategoria().',
-                '.$producto_dto->getIdProducto().',
+                "'.$producto_dto->getIdProducto().'",
                 
                 "'.$producto_dto->getNombreProducto().'",
                 '.$producto_dto->getPrecioProducto().',
@@ -57,7 +57,7 @@
        }
        public function actualizarProductoDao($actua){
         try{
-            $sql ='SELECT * FROM productos WHERE id_producto=' .$actua.'';
+            $sql ='SELECT * FROM productos WHERE id_producto="' .$actua.'"';
             $dbh = mysqli_query($this->pdo,$sql);
             
 				return mysqli_fetch_row($dbh);
@@ -69,7 +69,7 @@
        public function modificarProductoDao($idCategoria,$idProducto,$nombreProducto,$precioProducto,$existProducto){
         try {
             $sql= "UPDATE productos SET id_categoria='$idCategoria',nombre_producto='$nombreProducto',precio_producto='$precioProducto',
-            exist_producto='$existProducto' WHERE id_producto= $idProducto";
+            exist_producto='$existProducto' WHERE id_producto= '$idProducto'";
           
             $dbh = mysqli_query($this->pdo,$sql);
 			return $dbh;

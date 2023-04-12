@@ -16,11 +16,15 @@
                     <input type="text" class="form-control mb-3" name="correo_cliente" placeholder="Correo">
                     <input type="submit" class="btn btn-enviar mt-2 ">
                 </form>
-
+                <div class="centarboton">
+                    <td  class="text-center"><a class="btn btn-secondary" href="?c=Vehiculo"     style="border-top-width: 6px;margin-bottom: 5px;"><i class="fas fa-motorcycle align-self-center"></i>Vehiculo</a></td>
+                    
+                    
+                                    </div>
             </div>
             <div class="div col-md-9">
                 
-                <table class="table justify-content-center col-11 ">
+                <table class="table justify-content-center col-md-9 ">
                     <thead>
                         <tr class="text-center">
                             <th scope="col">ID Cliente</th>

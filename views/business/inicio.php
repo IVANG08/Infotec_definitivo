@@ -18,14 +18,14 @@
     <div class="contenedor">
         <img class="logo" src="assets/img/logosf.jpg" alt="LogodeFazt">
         <h1>Iniciar Sesión</h1>
-        <form method="post" action="?c=Login" class="container_form">
+        <form method="post" action="?c=Login" class="container_form" novalidate>
             <!--USERNAME-->
-            <label for="username">Nombre Usuario</label>
-            <input type="text" placeholder="Ingresar Usuario">
+            <label for="username">Id Usuario</label>
+            <input type="text"  name="username" placeholder="Ingresar Usuario">
 
             <!--PASSWORD-->
             <label for="password">Contraseña</label>
-            <input type="password" placeholder="Ingresar Contraseña">
+            <input type="password"  name="password" placeholder="Ingresar Contraseña">
 
             <input type="submit" value="Ingresar">
 

@@ -7,18 +7,18 @@
     <div>
                 <form class="row g-3 needs-validation" method="post" action="?c=Vehiculo&a=modificar_vehiculo"novalidate>
                 <div class="col-md-6">
-                        <label for="id_cliente" class="form-label">cliente</label>
+                        <label for="id_cliente" class="form-label">Cliente</label>
                 <select class="form-control mb-3" name="id_cliente" placeholder="cliente" >
                     
                     <?php 
                         while($row=mysqli_fetch_array($cliente)){
                             if($row['id_cliente']==$edivehi[1]){
                             ?>
-                            <option value='<?php echo $row['id_cliente']?>'> <?php echo $row['nombre_cliente']?></option>
+                            <option value='<?php echo $row['id_cliente']?>'> <?php echo $row['nombre_cliente'] ;echo " ";echo $row['apellido_cliente']?></option>
                             <?php
                             }else{
                             ?>
-                        <option value='<?php echo $row['id_cliente']?>'> <?php echo $row['nombre_cliente']?></option>
+                        <option value='<?php echo $row['id_cliente']?>'> <?php echo $row['nombre_cliente'] ;echo " ";echo $row['apellido_cliente']?></option>
                         <?php
 
                             }

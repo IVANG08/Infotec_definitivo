@@ -51,7 +51,7 @@
         }
         public function actualizarServicioDao($sermod){
             try {
-                $sql='SELECT * From servicios where id_servicios='.$sermod.'';
+                $sql='SELECT * From servicios where id_servicios="'.$sermod.'"';
                 $dbh = mysqli_query($this->pdo,$sql);
  				return mysqli_fetch_row($dbh);
  			} catch (Exception $e) {
@@ -60,7 +60,7 @@
         }
         public function modificarServicioDao($idServicios,$nombreServicio,$precioServicio){
             try {
-                $sql= "UPDATE servicios SET nombre_servicio='$nombreServicio', precio_servicio='$precioServicio' WHERE id_servicios=$idServicios";
+                $sql= "UPDATE servicios SET nombre_servicio='$nombreServicio', precio_servicio='$precioServicio' WHERE id_servicios='$idServicios'";
                 $dbh = mysqli_query($this->pdo,$sql);
 			return $dbh;
 		} catch (Exception $e) {

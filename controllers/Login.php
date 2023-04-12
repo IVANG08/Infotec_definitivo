@@ -2,6 +2,7 @@
     class Login{
         public function __construct(){}
         public function index(){
+            
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 
                 require_once "views/business/inicio.php";

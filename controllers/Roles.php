@@ -34,11 +34,7 @@
             require_once "views/modules/0_rol/rol.view.php";
             require_once "views/roles/admin/footer.php";
         }
-        
-     
         public function editar_rol(){
-           
-            
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 $editrol =$this->rolDao->actualizarRolDao($_GET['id_rol']);        
             }
@@ -47,13 +43,10 @@
             require_once "views/roles/admin/footer.php";
         }
         public function modificar_rol(){
-           
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-               
                 $this->rolDao->modificarRolDao($_POST['id_rol'],$_POST['nombre_rol']);               
                 header("Location: ?c=Roles");
             }
-            
         }
 }
 ?>

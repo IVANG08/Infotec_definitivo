@@ -11,7 +11,11 @@
                     <input type="text" class="form-control" id="validationCustom02" value="" required name="nombre_categoria" placeholder="Nombre Categoria">
                     <input type="submit" class="btn btn-enviar mt-2 ">
                 </form>
-
+                <div class="centarboton">
+                    <td  class="text-center"><a class="btn btn-secondary" href="?c=Producto"     style="border-top-width: 6px;margin-bottom: 5px;"><i class="bi bi-archive-fill "></i>Crear roducto</a></td>
+                    
+                    
+                                    </div>
             </div>
             <div class="div col-md-8">
                 

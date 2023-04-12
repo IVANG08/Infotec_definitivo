@@ -12,7 +12,7 @@
                     <?php 
                         while($row=mysqli_fetch_array($cliente)){
                         ?>
-                        <option value='<?php echo $row['id_cliente']?>'> <?php echo $row['nombre_Cliente']?></option>
+                        <option value='<?php echo $row['id_cliente']?>'> <?php echo $row['nombre_cliente'] ;echo " ";echo $row['apellido_cliente']?></option>
                         <?php
                         }
                          ?>
@@ -21,7 +21,11 @@
                     <input type="text" class="form-control mb-3" name="placa_vehiculo" placeholder="Placa Vehiculo">
                     <input type="submit" class="btn btn-enviar mt-2 ">
                 </form>
-
+                <div class="centarboton">
+                    <td  class="text-center"><a class="btn btn-secondary" href="?c=Vehiculo"     style="border-top-width: 6px;margin-bottom: 5px;"><i class="bi bi-person-lines-fill align-self-center"></i>Cliente</a></td>
+                    
+                    
+                                    </div>
             </div>
             <div class="div col-md-9">
                 
