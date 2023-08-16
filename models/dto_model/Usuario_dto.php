@@ -11,19 +11,8 @@
         private $telefonoUsuario;
         private $passUsuario;
         
-        
-        /* SOBRECARGA DE CONSTRUCTORES */
-        
-        // Constructor de Constructores
-		public function __construct(){
-			$a = func_get_args();
-			$i = func_num_args();
-			if (method_exists($this, $f='__construct'.$i)) {
-				call_user_func_array(array($this, $f), $a);
-			}
-		}
         // Constructor
-        public function __construct7($idRol,$idUsuario,$nombresUsuario,$apellidosUsuario,$correoUsuario,$telefonoUsuario,$passUsuario){
+        public function __construct($idRol,$idUsuario,$nombresUsuario,$apellidosUsuario,$correoUsuario,$telefonoUsuario,$passUsuario){
 			$this->idRol = $idRol;
 			$this->idUsuario = $idUsuario;
             $this->nombresUsuario = $nombresUsuario;

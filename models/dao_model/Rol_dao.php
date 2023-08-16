@@ -3,82 +3,62 @@
 		private $pdo;
 		public function __construct(){
 			try {
-				$this->pdo = Database::connection();				
+				$db = new DataBase();
+                $this->pdo = $db->connection();	
+                
 			} catch (Exception $e) {
 				die($e->getMessage());
 			}
 		}		
-
-		# Registrar o Crear Rol
-		public function createRol($rol_dto){
+		public function verRolDao(){
+			$sql = "SELECT * FROM ROLES;";
+			$resultado = $this->pdo->query($sql);
+			$ver = $resultado->fetchAll();
+			return $ver;
+		}
+		public function consultarRolDao($codigoRol){
+			$sql = "SELECT * FROM ROLES where id_rol='$codigoRol'";
+			
+			$resultado = $this->pdo->query($sql);
+			
+			$consulta = $resultado->fetchAll();
+			
+			return $consulta;
+		}
+		public function createRolDao($rol_dto){
 			try {
-				// Crear la Consulta
-				$sql = 'INSERT INTO roles VALUES (
-							'.$rol_dto->getCodigoRol().',
-							"'.$rol_dto->getNombreRol().'"
-						)';
-				// Preparar la BBDD para la consulta
-                mysqli_query($this->pdo,$sql);
-                
+				$sql = "INSERT INTO roles (`id_rol`, `nombre_rol`) VALUES (?,?)";
+				$resultado = $this->pdo->prepare($sql);
+				$resultado->execute(array($rol_dto->getCodigoRol(),$rol_dto->getNombreRol()));
+				return $resultado->rowCount();
 			} catch (Exception $e) {
 				die("....".$e->getMessage());	
 			}
 		}
-
-// 		# Consultar Roles
-	public function readRolDao(){
-		try {
-	// Asignar una consulta al atributo $sql
-			$sql = 'SELECT * FROM ROLES';
-	// Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
-			$dbh = mysqli_query($this->pdo,$sql);
- 				return $dbh;
- 			} catch (Exception $e) {
- 				die($e->getMessage());
- 			}
- 		}
-	public function consultarRolDao($id){
-		try {
-// Asignar una consulta al atributo $sql
-		$sql = 'SELECT * FROM ROLES where id_rol='.$id.'';
-// Creamos las variable $dbh y le asignamos la conexión y la consulta $sql
-	$dbh = mysqli_query($this->pdo,$sql);
- 				return mysqli_fetch_row($dbh);
- 			} catch (Exception $e) {
- 				die($e->getMessage());
- 			}
- 		}
-	public function eliminarRolDao($rolid){
-		try {
-		$sql= 'DELETE FROM ROLES WHERE id_rol='.strval($rolid);
-		$dbh = mysqli_query($this->pdo,$sql);
- 				return $dbh;	
- 			} catch (Exception $e) {
- 				die($e->getMessage());
- 			}
-		}
-	public function actualizarRolDao($idmod){
-		try {
-			$sql = 'SELECT * FROM ROLES where id_rol='.$idmod.'';
-			$dbh = mysqli_query($this->pdo,$sql);
-			return mysqli_fetch_row($dbh);
+		public function modificarRolDao($rol_dto){
+			try {
+				$sql = "UPDATE roles set nombre_rol=? where id_rol=?";
+				$resultado = $this->pdo->prepare($sql);
+				$resultado->execute(array($rol_dto->getNombreRol(),$rol_dto->getCodigoRol()));
 				
-		} catch (Exception $e) {
-			die($e->getMessage());
-		
+				return $resultado->rowCount();
+				
+			} catch (Exception $e) {
+				die("....".$e->getMessage());	
+			}
+		}
+		public function eliminarRolDao($rolid){
+			try {
+				$sql = "DELETE from roles where id_rol=?";
+				$resultado = $this->pdo->prepare($sql);
+				$resultado->execute(array($rolid));
+				return $resultado->rowCount();
+			}
+			catch (Exception $e) {
+				die("....".$e->getMessage());	
+			}
 		}
 	}
-	public function modificarRolDao($codigoRol,$nombreRol){
-		try {
-			$sql = "UPDATE ROLES SET nombre_rol='$nombreRol' where id_rol=$codigoRol";
-			$dbh = mysqli_query($this->pdo,$sql);
-			return $dbh;
-		} catch (Exception $e) {
-			die($e->getMessage());
-		
-		}
-	}
-	
-	}
+
  		
 ?> 

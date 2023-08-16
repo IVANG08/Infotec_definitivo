@@ -1,5 +1,5 @@
 <?php
-    class Servicios_dto{
+    class Servicio_dto{
         private $idServicios;
         private $nombreServicio;
         private $precioServicio;
@@ -20,7 +20,7 @@
             $this->idServicios=$idServicios;
         }
         public function getIdServicio(){
-            return $this->idServicio;
+            return $this->idServicios;
         }
         public function setNombreServico($nombreServicio){
             $this->nombreServicio=$nombreServicio;
