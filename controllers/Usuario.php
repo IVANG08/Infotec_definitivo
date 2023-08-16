@@ -12,78 +12,44 @@
 
             }
             public function index(){
-                $usuario = $this->usuarioDao->readUsuarioDao();
-                $roles = $this->rolDao->readRolDao();
-                        
+                $verUsuario = $this->usuarioDao->verUsuarioDao();
+                $verRol = $this->rolDao->verRolDao();
+                $alerta = '';
                 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id_rol'])){
-                    $result =$this->usuarioDao->consultarRolDao($_GET['id_rol']);
-                    $Usuario_dto=new Usuario_dto($result[0],$result[1]);
-                    $Usuario_dto->setIdRol($result[0]);
+                    $result = $this->usuarioDao->consultarUsuarioDao($_GET['id_rol']);
+                    $usuario_dto = new Usuario_dto($result[0],$result[1]);
+                    $usuario_dto->setIdUsuario($result[0]);
                 }
                 elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-                    // Capturar datos
-                    $Usuario_dto=new Usuario_dto($_POST['id_rol'],$_POST['id_usuario'],$_POST['nombres_usuario'],$_POST['apellidos_usuario'],$_POST['correo_usuario'],$_POST['telefono_usuario'],$_POST['pass_usuario']);
-                    $this->usuarioDao->createUsuario($Usuario_dto);
-                    header("Location: ?c=Usuario"); 
-                    
-                }
-                require_once "views/roles/admin/header_dash.php";
-                require_once "views/modules/1_users/1_1_usuario/usuario.view.php";
-                require_once "views/roles/admin/footer.php";
-            }
-            public function crear_usuario(){
-                if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-                    require_once "views/roles/admin/header_dash.php";
-                    require_once "views/modules/1_users/1_1_usuario/usuario.view.php";
-                    require_once "views/roles/admin/footer.php";
-                    
-                }
-
-                elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-                                       
-                        $Usuario_dto=new Usuario_dto($_POST['id_rol'],$_POST['id_usuario'],$_POST['nombres_usuario'],$_POST['apellidos_usuario'],$_POST['correo_usuario'],$_POST['telefono_usuario'],$_POST['pass_usuario']);
-                        $this->usuarioDao->createUsuario($Usuario_dto);
-                        header("Location: ?c=Usuario&a=crear_usuario");
-                    } else {
-                        header("Location: ?c=Usuario&a=crear_usuario");
+                    if (!empty($_POST['id_rol']) && !empty($_POST['id_usuario']) && !empty($_POST['nombres_usuario']) && !empty($_POST['apellidos_usuario']) && !empty($_POST['correo_usuario']) && !empty($_POST['telefono_usuario']) && !empty($_POST['pass_usuario'])){
+                        $usuario_dto = new Usuario_dto ($_POST['id_rol'],$_POST['id_usuario'],$_POST['nombres_usuario'],$_POST['apellidos_usuario'],$_POST['correo_usuario'],$_POST['telefono_usuario'],$_POST['pass_usuario']);
+                        $this->usuarioDao->crarUsuarioDao($usuario_dto);
+                        
+                        header("Location: ?c=Usuario"); 
                     }
-                
-                               
-            }
-            public function eliminar_usuario(){ 
-                if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-                    
-                    // Capturar Datos
-                    $this->usuarioDao->eliminarUsuarioDao($_GET['id_usuario']); 
+                    else{
+                        $alerta ='Existen campos vacios';
+                    }
                 }
-                $roles = $this->rolDao->readRolDao();
-                $usuario = $this->usuarioDao->readUsuarioDao();
-
                 require_once "views/roles/admin/header_dash.php";
                 require_once "views/modules/1_users/1_1_usuario/usuario.view.php";
                 require_once "views/roles/admin/footer.php";
-           
-        }
-        public function editar_usuario(){
-           
-            
-            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-                $editper =$this->usuarioDao->actualizarUsuarioDao($_GET['id_usuario']); 
-                $roles = $this->rolDao->readRolDao();
-              
             }
-            require_once "views/roles/admin/header_dash.php";
-            require_once "views/modules/1_users/1_1_usuario/usuario.editar.php";
-            require_once "views/roles/admin/footer.php";
-        }
-        public function modificar_usuario(){
-           
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-           
-                $this->usuarioDao->modificarUsuarioDao($_POST['id_rol'],$_POST['id_usuario'],$_POST['nombres_usuario'],$_POST['apellidos_usuario'], $_POST['correo_usuario'], $_POST['telefono_usuario'],$_POST['pass_usuario']);               
-                header("Location: ?c=Usuario");
+            public function editar_usuario(){
+                $usuario = $this->usuarioDao->consultarUsuarioDao($_GET['id_usuario'])[0];
+                $rol = $this->rolDao->verRolDao();
+                require_once "views/roles/admin/header_dash.php";
+                require_once "views/modules/1_users/1_1_usuario/usuario.editar.php";
+                require_once "views/roles/admin/footer.php";
             }
-            
-        }
+            public function modificar_usuario(){
+                $usuario_dto = new Usuario_dto ($_POST['id_rol'],$_POST['id_usuario'],$_POST['nombres_usuario'],$_POST['apellidos_usuario'],$_POST['correo_usuario'],$_POST['telefono_usuario'],$_POST['pass_usuario']);
+                $this->usuarioDao->modificarUsuarioDao($usuario_dto);
+                header("Location: ?c=Usuario"); 
+            }
+            public function eliminar_usuario(){
+                $this->usuarioDao->eliminarUsuarioDao($_GET['id_usuario']);
+                header("Location: ?c=Usuario"); 
+            }
     }
 ?>
