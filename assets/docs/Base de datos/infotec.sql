@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2023 a las 22:27:51
+-- Tiempo de generación: 16-08-2023 a las 04:44:35
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -30,15 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `categoria` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`) VALUES
-(1, 'Lubricantes'),
-(2, 'Aditivos');
+(1, 'Aceite'),
+(2, 'Accesorios'),
+(3, 'Lubricantes'),
+(4, 'Repuestos');
 
 -- --------------------------------------------------------
 
@@ -53,20 +55,16 @@ CREATE TABLE `clientes` (
   `apellido_cliente` varchar(45) DEFAULT NULL,
   `telefono_cliente` varchar(45) DEFAULT NULL,
   `correo_cliente` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
 INSERT INTO `clientes` (`id_cliente`, `identificacion_cliente`, `nombre_cliente`, `apellido_cliente`, `telefono_cliente`, `correo_cliente`) VALUES
-('2', '987546', 'Mateo', 'Enzo', '3145698745', 'Enzo@gmail.com'),
-('3', '2313344', 'Carla', 'Gomez', '3146589785', 'carla@gmail.com'),
-('4', '123894561', 'Jose', 'Cortes', '3118542689', 'jose@gmail.com'),
-('5', '985465612', 'Andrea', 'Martinez', '3125986594', 'andre12@hotmail.com'),
-('6', '1324135', 'ana', 'mendoza', '1332412', '\"SKxmzk@gmail.com\"'),
-('7', '1233359871', 'Juan', 'Cardona', '875165', 'asdiohias@gmail.com'),
-('8', '12389431', 'Andrea', 'barragan', '31689754821', 'andrea@gmail.com');
+('1', '1233598745', 'Andrea', 'mendoza', '3122598657', 'Mendoza@gmail.com'),
+('2', '12345812', 'Julian', 'Lopez', '3158741596', 'Lopez@gmail.com'),
+('3', '101059874', 'Francisco', 'Gomez', '3046875942', 'gomez@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -79,7 +77,7 @@ CREATE TABLE `compras` (
   `fecha_compra` date NOT NULL,
   `total_precio_compra` decimal(10,2) NOT NULL,
   `id_proveedor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -91,12 +89,12 @@ CREATE TABLE `factura` (
   `id_factuta` int(11) NOT NULL,
   `id_usuarios` varchar(10) NOT NULL,
   `identificacion_cliente` varchar(10) NOT NULL,
-  `placa_vehiculo` varchar(10) DEFAULT NULL,
+  `placa_vehiculo` int(10) DEFAULT NULL,
   `fecha_factura` date NOT NULL,
   `total_antesiva_prod` decimal(10,2) NOT NULL,
   `iva_pedido` decimal(10,2) NOT NULL,
   `total_pedido` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -109,7 +107,7 @@ CREATE TABLE `lista_productos_c` (
   `id_productos` varchar(10) NOT NULL,
   `precio_producto_compra` decimal(10,2) NOT NULL,
   `cantidad_productos_compra` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -121,7 +119,7 @@ CREATE TABLE `lista_productos_f` (
   `id_factura` int(11) NOT NULL,
   `id_producto` varchar(10) NOT NULL,
   `cantidad_productos` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -132,7 +130,7 @@ CREATE TABLE `lista_productos_f` (
 CREATE TABLE `lista_servicios_f` (
   `id_servicios` varchar(10) NOT NULL,
   `id_factura` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -146,7 +144,7 @@ CREATE TABLE `productos` (
   `nombre_producto` varchar(50) NOT NULL,
   `precio_producto` decimal(10,2) NOT NULL,
   `exist_producto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -156,17 +154,9 @@ CREATE TABLE `productos` (
 
 CREATE TABLE `proveedores` (
   `id_proveedor` int(11) NOT NULL,
-  `nombre_proveedor` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `proveedores`
---
-
-INSERT INTO `proveedores` (`id_proveedor`, `nombre_proveedor`) VALUES
-(1, 'LUBCEN S.A.'),
-(2, 'QUAKER STATE '),
-(3, 'POCHTECA ');
+  `nombre_proveedor` varchar(50) NOT NULL,
+  `telefono_proveedor` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -177,15 +167,15 @@ INSERT INTO `proveedores` (`id_proveedor`, `nombre_proveedor`) VALUES
 CREATE TABLE `roles` (
   `id_rol` int(11) NOT NULL,
   `nombre_rol` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `roles`
 --
 
 INSERT INTO `roles` (`id_rol`, `nombre_rol`) VALUES
-(1, 'admin'),
-(2, 'Vendedor');
+(1, 'Administrador'),
+(2, 'Vendedor ');
 
 -- --------------------------------------------------------
 
@@ -197,7 +187,15 @@ CREATE TABLE `servicios` (
   `id_servicios` varchar(10) NOT NULL,
   `nombre_servicio` varchar(50) NOT NULL,
   `precio_servicio` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `servicios`
+--
+
+INSERT INTO `servicios` (`id_servicios`, `nombre_servicio`, `precio_servicio`) VALUES
+('Serv_1', 'Cambio Aceite', '50000.00'),
+('Serv_2', 'Cambio Pastillas', '50001.00');
 
 -- --------------------------------------------------------
 
@@ -213,17 +211,15 @@ CREATE TABLE `usuarios` (
   `correo_usuario` varchar(100) NOT NULL,
   `telefono_usuario` varchar(15) NOT NULL,
   `pass_usuario` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_rol`, `id_usuario`, `nombres_usuario`, `apellidos_usuario`, `correo_usuario`, `telefono_usuario`, `pass_usuario`) VALUES
-(1, '123', 'sadasd23', 'sadfas', 'sad@gmail', '68441546', 'sdnas'),
-(1, '12321', 'asdas', 'sadasd', 'weqqw', '12312', 'xzczxc'),
-(2, '123432', 'qweqwe', '1wEQWQE', 'QWSEQWE', '123123', 'SDCWD'),
-(1, '8945231', 'tufvuv', 'ygbuk', 'bgjkb', '8465', 'uygbjk');
+(2, '1232', 'Ana ', 'Soler', 'Soler89@gmail.com', '31259874', 'asdasd89'),
+(1, '8945231', 'Carlos', 'Mendoza', 'sad@gmail.com', '68441546', 'asdas');
 
 -- --------------------------------------------------------
 
@@ -232,20 +228,18 @@ INSERT INTO `usuarios` (`id_rol`, `id_usuario`, `nombres_usuario`, `apellidos_us
 --
 
 CREATE TABLE `vehiculos` (
-  `placa_vehiculo` varchar(10) NOT NULL,
-  `id_cliente` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_vehiculo` int(11) NOT NULL,
+  `id_cliente` varchar(10) NOT NULL,
+  `placa_vehiculo` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `vehiculos`
 --
 
-INSERT INTO `vehiculos` (`placa_vehiculo`, `id_cliente`) VALUES
-('VCX147', '2'),
-('ASD125', '3'),
-('QSC854', '3'),
-('NGR852', '4'),
-('YUI895', '4');
+INSERT INTO `vehiculos` (`id_vehiculo`, `id_cliente`, `placa_vehiculo`) VALUES
+(1, '1', 'OCX146'),
+(2, '3', 'VCX148');
 
 --
 -- Índices para tablas volcadas
@@ -338,7 +332,7 @@ ALTER TABLE `usuarios`
 -- Indices de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  ADD PRIMARY KEY (`placa_vehiculo`),
+  ADD PRIMARY KEY (`id_vehiculo`),
   ADD UNIQUE KEY `placa_vehiculo_UNIQUE` (`placa_vehiculo`),
   ADD KEY `ind_vehiculos_clientes` (`id_cliente`);
 
@@ -350,7 +344,7 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `factura`
@@ -362,13 +356,19 @@ ALTER TABLE `factura`
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `vehiculos`
+--
+ALTER TABLE `vehiculos`
+  MODIFY `id_vehiculo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
@@ -384,9 +384,9 @@ ALTER TABLE `compras`
 -- Filtros para la tabla `factura`
 --
 ALTER TABLE `factura`
-  ADD CONSTRAINT `fk_factura_cliente` FOREIGN KEY (`identificacion_cliente`) REFERENCES `clientes` (`identificacion_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_factura_usuario` FOREIGN KEY (`id_usuarios`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_factura_vehiculo` FOREIGN KEY (`placa_vehiculo`) REFERENCES `vehiculos` (`placa_vehiculo`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`identificacion_cliente`) REFERENCES `clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `factura_ibfk_2` FOREIGN KEY (`placa_vehiculo`) REFERENCES `vehiculos` (`id_vehiculo`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `factura_ibfk_3` FOREIGN KEY (`id_usuarios`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `lista_productos_c`
