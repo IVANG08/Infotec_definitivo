@@ -1,14 +1,21 @@
 <?php
     class Proveedor_dao{
-        private $pdo;
         public function __construct(){
 			try {
-				$this->pdo = Database::connection();				
+				$db = new DataBase();
+				$this->pdo = $db->connection();				
+
 			} catch (Exception $e) {
 				die($e->getMessage());
 			}
-		}	
-        public function createProveedor($proveedor_dto){
+		}
+        public function verProveedorDao(){
+            $sql= "SELECT * FROM proveedores";
+            $resultado = $this->pdo->query($sql);
+            $verProveedor = $resultado->fetchall();
+            return $verProveedor;
+        }
+        public function consultarProveedorDao($proveedor_dto){
             try{
                 $sql='INSERT INTO proveedrores VALUES(
                     '.$proveedor_dto->getIdProveedor().',"'.$proveedor_dto->getNombreProveedor().'"
@@ -19,16 +26,7 @@
 				die("....".$e->getMessage());
             }
         }
-        public function readProveedorDao(){
-            try{
-                $sql='SELECT * FROM proveedores';
-                $dbh = mysqli_query($this->pdo,$sql);
- 				return $dbh;
- 			} catch (Exception $e) {
- 				die($e->getMessage());
-            }
-        }
-        public function consultarProveedorDao($id){
+        public function consutarProveedorDao($id){
             try {
                 $sql='SELECT * FROM proveedores where id_proveedor='.$id.'';
             $dbh = mysqli_query($this->pdo,$sql);
