@@ -20,14 +20,14 @@
         <h1>Iniciar Sesión</h1>
         <form method="post" action="?c=Login" class="container_form" novalidate>
             <!--USERNAME-->
-            <label for="username">Id Usuario</label>
-            <input type="text"  name="username" placeholder="Ingresar Usuario">
+            <label for="correo_usuario">Correo</label>
+            <input type="text"  name="correo_usuario" placeholder="Ingresar Usuario">
 
             <!--PASSWORD-->
-            <label for="password">Contraseña</label>
-            <input type="password"  name="password" placeholder="Ingresar Contraseña">
+            <label for="pass_usuario">Contraseña</label>
+            <input type="password"  name="pass_usuario" placeholder="Ingresar Contraseña">
 
-            <input type="submit" value="Ingresar">
+            <input type="submit" value="validar">
 
             <div class="container__chek">
                 <div class="form_chekbox">
