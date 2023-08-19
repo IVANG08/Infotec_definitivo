@@ -120,3 +120,15 @@ new DataTable('#tablarol', {
         }
     ]
  });
+ new DataTable('#tablaproveedor', {
+    columnDefs: [
+        {
+            targets: [0],
+            orderData: [0, 1]
+        },
+        {
+            targets: [4],
+            orderData: [4, 0]
+        }
+    ]
+ });
