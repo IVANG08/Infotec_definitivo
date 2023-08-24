@@ -1,24 +1,24 @@
 <?php
     class Login_dto{
-        private $correo;
-        private $contraseña;        
+        private $usuario;
+        private $pass;        
         // Constructor
-        public function __construct($correo,$contraseña,){
-            $this->correo = $correo;
-            $this->contraseña = $contraseña;
+        public function __construct($usuario,$pass){
+            $this->usuario = $usuario;
+            $this->pass = $pass;
             
         }
-        public function setCorreo($correo){
-            $this->correo = $correo;
+        public function setUsuario($usuario){
+            $this->usuario = $usuario;
         }
-        public function getCorreo(){
-            return $this->correo;
+        public function getUsuario(){
+            return $this->usuario;
         }
-        public function setContraseña($contraseña){
-            $this->contraseña = $contraseña;
+        public function setPass($pass){
+            $this->pass = $pass;
         }
-        public function getContraseña(){
-            return $this->contraseña;
+        public function getPass(){
+            return $this->pass;
         }
     
     }

@@ -17,7 +17,7 @@
                 $alerta = '';
                 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id_rol'])){
                     $result = $this->usuarioDao->consultarUsuarioDao($_GET['id_rol']);
-                    $usuario_dto = new Usuario_dto($result[0],$result[1]);
+                    $usuario_dto = new Usuario_dto($result[0],$result[1],$result[2],$result[3],$result[4],$result[5],$result[6]);
                     $usuario_dto->setIdUsuario($result[0]);
                 }
                 elseif($_SERVER['REQUEST_METHOD'] == 'POST'){

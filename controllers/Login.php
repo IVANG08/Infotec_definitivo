@@ -7,20 +7,25 @@ class Login{
         $this->loginDao = new Login_dao;
     }
     public function index(){
+        $alerta = "";
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-                
             require_once "views/business/inicio.php";
         }
-        elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-            // Capturar Datos
-            // Validar los Datos
-            // Crear el Objeto
-            // Comprobar en la base de datos
-            // Redireccionar al Dashboard
-            header("Location: ?c=Dashboard");
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $login_dto = new Login_dto($_POST['id_usuario'], $_POST['pass_usuario']);   
+            $user = $this->loginDao->login($login_dto);         
+            
+            if ($user) {
+                header("Location: ?c=Dashboard");
+            } else {                    
+                $alerta = "Usuario Incorrecto";
+                require_once "views/business/inicio.php";
+                // echo "<script>alert('Usuario Incorrecto')</script>";
+            }
         }
-
     }
+    
+    
     
 }
 ?>

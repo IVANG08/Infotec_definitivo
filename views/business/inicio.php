@@ -18,16 +18,19 @@
     <div class="contenedor">
         <img class="logo" src="assets/img/logosf.jpg" alt="LogodeFazt">
         <h1>Iniciar Sesión</h1>
+       
+                
         <form method="post" action="?c=Login" class="container_form" novalidate>
             <!--USERNAME-->
-            <label for="correo_usuario">Correo</label>
-            <input type="text"  name="correo_usuario" placeholder="Ingresar Usuario">
+            <label for="id_usuario">Id Usuario</label>
+            <input type="text"  name="id_usuario" placeholder="Ingresar Usuario">
 
             <!--PASSWORD-->
             <label for="pass_usuario">Contraseña</label>
             <input type="password"  name="pass_usuario" placeholder="Ingresar Contraseña">
 
             <input type="submit" value="validar">
+            
 
             <div class="container__chek">
                 <div class="form_chekbox">
@@ -38,6 +41,18 @@
             <a href="#" class="links">Has olvidado su contraseña</a><br>
         </form>
     </div>
+    <div class="container">
+                    <?php if(!empty($alerta)){ ?>
+                        <div class="">
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $alerta ?>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                            </div>
+                        </div>
+                    <?php }?>
+                </div>
 </body>
 
 </html>
