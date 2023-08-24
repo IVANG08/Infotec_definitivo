@@ -14,7 +14,6 @@ class Login{
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $login_dto = new Login_dto($_POST['id_usuario'], $_POST['pass_usuario']);   
             $user = $this->loginDao->login($login_dto);         
-            
             if ($user) {
                 header("Location: ?c=Dashboard");
             } else {                    
@@ -24,8 +23,5 @@ class Login{
             }
         }
     }
-    
-    
-    
 }
 ?>

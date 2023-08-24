@@ -1,7 +1,5 @@
 <?php
-
 class Factura_dto{
-
     private $idfactura;
     private $idusuario;
     private $idcliente;
@@ -10,20 +8,9 @@ class Factura_dto{
     private $antesdeiva;
     private $iva;
     private $total;
-
-
      /* SOBRECARGA DE CONSTRUCTORES */
-        
-        // Constructor de Constructores
-		public function __construct(){
-			$a = func_get_args();
-			$i = func_num_args();
-			if (method_exists($this, $f='__construct'.$i)) {
-				call_user_func_array(array($this, $f), $a);
-			}
-		}
         // Constructor
-        public function __construct8($idfactura, $idusuario, $idcliente, $placa, $fecha, $antesdeiva, $iva, $total){
+        public function __construct($idfactura, $idusuario, $idcliente, $placa, $fecha, $antesdeiva, $iva, $total){
 			$this->idfactura = $idfactura;
 			$this->idusuario= $idusuario;
             $this->idcliente = $idcliente ;
@@ -34,57 +21,56 @@ class Factura_dto{
             $this->total= $total ;
 		}
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
-        
-        // Código Rol
+        // Código Id Factura
         public function setIdFactura($idfactura){
             $this->idfactura = $idfactura;
         }
         public function getIdFactura(){
             return $this->idfactura;
         }
-
-        // Nombre Rol
+        // Id Usuario
         public function setUsuario($idusuario){
             $this->idusuario= $idusuario;
         }
         public function getUsuario(){
             return $this->idusuario;
         }
+        // Id Cliente
         public function setIdCliente($idcliente){
             $this->idcliente = $idcliente;
         }
         public function getIdCliente(){
             return $this->idcliente;
         }
-
+        // Placa
         public function setPlaca($placa){
             $this->placa = $placa;
         }
         public function getPlaca(){
             return $this->placa;
         }
-
+        // Fecha
         public function setFecha($fecha){
             $this->fecha = $fecha;
         }
         public function getFecha(){
             return $this->fecha;
         }
-
+        // Total antes de iva
         public function setAntIva($antesdeiva){
             $this->antesdeiva = $antesdeiva;
         }
         public function getAntIva(){
             return $this->antesdeiva;
         }
-
+        // Iva
         public function setIva($iva){
             $this->iva = $iva;
         }
         public function getIva(){
             return $this->iva;
         }
-
+        // Total
         public function setTotal($total ){
             $this->total  = $total ;
         }
@@ -92,9 +78,4 @@ class Factura_dto{
             return $this->total ;
         }
     }
-
-
-
-
-
 ?>

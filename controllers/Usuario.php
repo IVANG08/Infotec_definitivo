@@ -9,7 +9,6 @@
             public function __construct(){
                 $this->usuarioDao = new Usuario_dao;
                 $this->rolDao = new Rol_dao;
-
             }
             public function index(){
                 $verUsuario = $this->usuarioDao->verUsuarioDao();
@@ -24,7 +23,6 @@
                     if (!empty($_POST['id_rol']) && !empty($_POST['id_usuario']) && !empty($_POST['nombres_usuario']) && !empty($_POST['apellidos_usuario']) && !empty($_POST['correo_usuario']) && !empty($_POST['telefono_usuario']) && !empty($_POST['pass_usuario'])){
                         $usuario_dto = new Usuario_dto ($_POST['id_rol'],$_POST['id_usuario'],$_POST['nombres_usuario'],$_POST['apellidos_usuario'],$_POST['correo_usuario'],$_POST['telefono_usuario'],$_POST['pass_usuario']);
                         $this->usuarioDao->crarUsuarioDao($usuario_dto);
-                        
                         header("Location: ?c=Usuario"); 
                     }
                     else{
