@@ -1,10 +1,26 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 30-08-2023 a las 00:22:17
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `infotec`
-
-CREATE DATABASE infotec;
-
 --
+
 -- --------------------------------------------------------
 
 --
@@ -24,7 +40,16 @@ INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`) VALUES
 (1, 'Aceite'),
 (2, 'Accesorios'),
 (3, 'Lubricantes'),
-(4, 'Repuestos');
+(4, 'Repuestos'),
+(5, 'Refrigerantes'),
+(6, 'Repuestos'),
+(7, 'Filtros'),
+(8, 'Llantas'),
+(9, 'Lujos'),
+(10, 'Hidraulicos'),
+(11, 'Grasas'),
+(12, 'Productos Limpieza'),
+(13, 'Aditivos');
 
 -- --------------------------------------------------------
 
@@ -80,6 +105,13 @@ CREATE TABLE `factura` (
   `total_pedido` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `factura`
+--
+
+INSERT INTO `factura` (`id_factuta`, `id_usuarios`, `identificacion_cliente`, `placa_vehiculo`, `fecha_factura`, `total_antesiva_prod`, `iva_pedido`, `total_pedido`) VALUES
+(4, '123456', '1', 1, '2022-09-26', '43000.00', '8170.00', '20000.00');
+
 -- --------------------------------------------------------
 
 --
@@ -105,6 +137,15 @@ CREATE TABLE `lista_productos_f` (
   `cantidad_productos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `lista_productos_f`
+--
+
+INSERT INTO `lista_productos_f` (`id_factura`, `id_producto`, `cantidad_productos`) VALUES
+(4, 'prod_15', 1),
+(4, 'prod_11', 1),
+(4, 'prod_14', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -115,6 +156,14 @@ CREATE TABLE `lista_servicios_f` (
   `id_servicios` varchar(10) NOT NULL,
   `id_factura` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `lista_servicios_f`
+--
+
+INSERT INTO `lista_servicios_f` (`id_servicios`, `id_factura`) VALUES
+('Serv_1', 4),
+('Serv_10', 4);
 
 -- --------------------------------------------------------
 
@@ -129,6 +178,32 @@ CREATE TABLE `productos` (
   `precio_producto` decimal(10,2) NOT NULL,
   `exist_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id_categoria`, `id_producto`, `nombre_producto`, `precio_producto`, `exist_producto`) VALUES
+(1, 'prod_1', 'Moto Bien 220ml', '24900.00', 12),
+(5, 'prod_10', 'Protector Radiador', '65000.00', 6),
+(6, 'prod_11', 'Aceite Hidraulico 20 Delta Oil', '22000.00', 6),
+(6, 'prod_12', 'Aceite Hidráulico Premium 750cc', '12000.00', 6),
+(7, 'prod_13', 'Grasa Lubricante Truper Multiusos Carro Moto 450g ', '15000.00', 4),
+(7, 'prod_14', 'Cojin Grasa De Litio Para Mantenimientos Universal', '4000.00', 12),
+(8, 'prod_15', 'Renovador De Farolas Lubristone', '17000.00', 4),
+(8, 'prod_16', 'Super Kit De Limpieza/lavado Universal Para Moto', '34000.00', 2),
+(9, 'prod_17', 'Aditivo Moto Bien Octanaje Simoniz Aumenta Potenci', '9000.00', 6),
+(9, 'prod_18', 'Aditivo Antifriccion Motos Scooter Liqui Moly', '19000.00', 6),
+(10, 'prod_19', 'Liquido Refrigerante Moto Ipone Radiador Liquid 1l', '19000.00', 6),
+(1, 'prod_2', 'Motul C2 400ml', '84900.00', 8),
+(10, 'prod_20', 'Aditivo Antifriccion Motos Scooter Liqui Moly', '19000.00', 6),
+(2, 'prod_3', 'Kit De Arrastre Casarella', '104500.00', 2),
+(2, 'prod_4', 'Pastillas Frenos Cross Trasera', '23000.00', 4),
+(3, 'prod_5', 'Filtro De Aire Universal', '41000.00', 10),
+(3, 'prod_6', 'Filtro De Aire Pulsar Ns200', '45000.00', 6),
+(4, 'prod_7', 'Llanta Trasera Michelin 130/70-13', '237000.00', 4),
+(4, 'prod_8', 'Llanta Delantera Pirelli 110/70 R7', '351000.00', 4),
+(5, 'prod_9', 'Espejos Rizoma De Lujo', '70000.00', 6);
 
 -- --------------------------------------------------------
 
@@ -188,7 +263,15 @@ CREATE TABLE `servicios` (
 
 INSERT INTO `servicios` (`id_servicios`, `nombre_servicio`, `precio_servicio`) VALUES
 ('Serv_1', 'Cambio Aceite', '50000.00'),
-('Serv_2', 'Cambio Pastillas', '50001.00');
+('Serv_10', 'Instalación Lujos', '5000.00'),
+('Serv_2', 'Cambio Pastillas', '50001.00'),
+('Serv_3', 'Reparacion motor', '450000.00'),
+('Serv_4', 'Calibrada Valvulas', '60000.00'),
+('Serv_5', 'Cambio Llantas', '12000.00'),
+('Serv_6', 'Cambio luces', '18000.00'),
+('Serv_7', 'Cambio guaya freno', '25000.00'),
+('Serv_8', 'Cambio Clutch', '38000.00'),
+('Serv_9', 'Cambio filtro', '8000.00');
 
 -- --------------------------------------------------------
 
@@ -211,8 +294,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_rol`, `id_usuario`, `nombres_usuario`, `apellidos_usuario`, `correo_usuario`, `telefono_usuario`, `pass_usuario`) VALUES
-(2, '1232', 'Ana ', 'Soler', 'Soler89@gmail.com', '31259874', 'asdasd89'),
-(1, '8945231', 'Carlos', 'Mendoza', 'sad@gmail.com', '68441546', 'asdas');
+(1, '123456', 'Ana', 'Mendoza', 'ana@gmail.com', '3103456987', '018611a8bee11c1817c4e6ee80c3d66059fce374');
 
 -- --------------------------------------------------------
 
@@ -337,13 +419,13 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `factura`
 --
 ALTER TABLE `factura`
-  MODIFY `id_factuta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_factuta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
@@ -421,4 +503,6 @@ ALTER TABLE `vehiculos`
   ADD CONSTRAINT `fk_vehiculo_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

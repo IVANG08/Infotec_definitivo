@@ -6,16 +6,12 @@
     require_once "models/dto_model/Vehiculo_dto.php";
     require_once "models/dao_model/Vehiculo_dao.php";
     class Factura{
+        private $facturaDao;
+        public function __construct(){
+            $this->facturaDao = new Factura_dao;
+        }
         public function index(){
-        require_once "views/roles/admin/header_dash.php";
-        require_once "views/modules/3_buy/factura.view.php";
-        require_once "views/roles/admin/footer.php";
+            $verfactura = $this->facturaDao->verFacturaDao();
+        }
     }
-    public function crearFactura(){
-        require_once "views/roles/admin/header_dash.php";
-        require_once "views/modules/3_buy/factura.php";
-        require_once "views/roles/admin/footer.php";
-    }
-    }
-
 ?>

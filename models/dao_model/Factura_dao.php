@@ -11,5 +11,14 @@
 			}
 		}
         // leer datos
-        
+        public function verFacturaDao(){
+			$sql = "SELECT * FROM factura";
+			$resultado = $this->pdo->query($sql);
+            
+            $verfactura = $resultado->fetchAll();
+			print_r($verfactura);
+			exit;
+            return $verfactura;
+		}
+
     }
