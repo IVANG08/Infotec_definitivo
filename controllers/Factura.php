@@ -18,7 +18,7 @@
         }
         public function ver_factura(){
             if ($_SERVER ['REQUEST_METHOD'] == 'GET' && isset ($_GET['id_factura'])){
-                $factura =$this->facturaDao->verFacturaId($_GET['id_factura']);
+                $factura =$this->facturaDao->consultarFacturaId($_GET['id_factura']);
             }
             require_once "views/roles/admin/header_dash.php";
             require_once "views/modules/3_buy/factura.view.php";

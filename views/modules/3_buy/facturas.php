@@ -33,7 +33,7 @@
                         
                         <tr>
                             <td class="text-center">
-                                 <?php echo $prov['id_factura']?>
+                                <?php echo $prov['id_factura']?>
                             </td>
                             <td class="text-center"> 
                                 <?php echo $prov['fecha_factura']?>
@@ -51,9 +51,9 @@
                             </tr>
                         <?php
                         }
-                         ?>
-                           
+                        ?>
                         </tbody>
+                        <?php phpinfo() ?>
                     </table>
             </div>
         </div>

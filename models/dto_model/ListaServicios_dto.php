@@ -1,28 +1,35 @@
 <?php
-class ListaFacS_dto{
-    private $id;
-    private $idListFac;
+class ListaServicios_dto{
+    private $idListaS;
+    private $idFac;
     private $idServicio;
     private $cantServicio;
     private $valorServicio;
      /* SOBRECARGA DE CONSTRUCTORES */
         // Constructor
-        public function __construct($idListFac, $idServicio, $cantServicio, $valorServicio){
-			$this->idListFac = $idListFac;
+        public function __construct($idListaS, $idFac, $idServicio, $cantServicio, $valorServicio){
+			$this->idListaS = $idListaS;
+			$this->idFac = $idFac;
 			$this->idServicio= $idServicio;
             $this->cantServicio = $cantServicio;
             $this->valorServicio = $valorServicio;
 		}
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         // Código Id Factura
-        public function setidListFac($idListFac){
-            $this->idListFac = $idListFac;
+        public function setIdListS($idListaS){
+            $this->idListaS = $idListaS;
         }
-        public function getidListFac(){
-            return $this->idListFac;
+        public function getIdListS(){
+            return $this->idListaS;
+        }
+        public function setIdFac($idFac){
+            $this->idFac = $idFac;
+        }
+        public function getIdFac(){
+            return $this->idFac;
         }
         // Id Usuario
-        public function setIdProduct($idServicio){
+        public function setIdServicio($idServicio){
             $this->idServicio= $idServicio;
         }
         public function getIdServicio(){

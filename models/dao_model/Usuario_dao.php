@@ -1,22 +1,23 @@
 <?php 
 	class Usuario_dao{
 		private $pdo;
+		// Conexión base de datos
 		public function __construct(){
 			try {
 				$db = new DataBase();
 				$this->pdo = $db->connection();				
-
 			} catch (Exception $e) {
 				die($e->getMessage());
 			}
 		}	
-	
+		
 		public function verUsuarioDao(){
 			$sql = "SELECT  pass_usuario,u.telefono_usuario,u.correo_usuario,u.apellidos_usuario,u.nombres_usuario,u.id_usuario,r.nombre_rol FROM usuarios u inner join roles r on r.id_rol=u.id_rol;";
 			$resultado = $this->pdo->query($sql);
 			$ver = $resultado->fetchall();
 			return $ver;
 		}
+		
 		public function consultarUsuarioDao($idUsuario){
 			$sql = "SELECT * From usuarios where id_usuario=$idUsuario";
 			$resultado = $this->pdo->query($sql);

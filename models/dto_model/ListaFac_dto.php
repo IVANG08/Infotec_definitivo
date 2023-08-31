@@ -1,24 +1,32 @@
 <?php
-class ListaFac_dto{
-    private $idListFac;
+class ListaProducto_dto{
+    private $idListP;
+    private $idFac;
     private $idProducto;
     private $cantProducto;
     private $valorProducto;
      /* SOBRECARGA DE CONSTRUCTORES */
         // Constructor
-        public function __construct($idListFac, $idProducto, $cantProducto, $valorProducto){
-			$this->idListFac = $idListFac;
+        public function __construct($idListP, $idFac, $idProducto, $cantProducto, $valorProducto){
+			$this->idListP = $idListP;
+			$this->idFac = $idFac;
 			$this->idProducto= $idProducto;
             $this->cantProducto = $cantProducto;
             $this->valorProducto = $valorProducto;
 		}
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         // Código Id Factura
-        public function setidListFac($idListFac){
-            $this->idListFac = $idListFac;
+        public function setIdListP($idListP){
+            $this->idListP = $idListP;
         }
-        public function getidListFac(){
-            return $this->idListFac;
+        public function getIdListP(){
+            return $this->idListP;
+        }
+        public function setIdFac($idFac){
+            $this->idFac = $idFac;
+        }
+        public function getIdFac(){
+            return $this->idFac;
         }
         // Id Usuario
         public function setIdProduct($idProducto){
