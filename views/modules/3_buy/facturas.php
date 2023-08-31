@@ -4,23 +4,24 @@
     <h1 class="titulos mt-1">Facturas</h1>
     <hr>
         <div class="row tablas">
-           
             <div class="col-md-3">
-                <input type="submit" class="btn btn-enviar mt-2 ">
-                <div class="centarboton">
-                <div class="container">
-                        
-                    </div>
+                <div class="tamaño">
+                    <td  class="text-center">
+                        <a class="btn-otro btn-secondary" href="?c=Roles"     style="border-top-width: 6px;margin-bottom: 5px;">
+                            <i class="fas bi-cart4 "></i>
+                    <div class= "parrafo">Crear Factura</div>
+                    </a>
+                    </td>
                 </div>
             </div>
             <div class="div col-md-9">
-                
-                <table id="tablaproveedor" class="table justify-content-center col-11 ">
+                <table id="tablafactura" class="table justify-content-center col-11 ">
                     <thead>
                         <tr class="text-center">
                             <th scope="col">ID Factura</th>
                             <th scope="col">Fecha</th>
                             <th scope="col">Cliente</th>
+                            <th scope="col">Vehiculo</th>
                             <th scope="col">Total</th>
                             <th scope="col">Ver</th>
                         </tr>
@@ -41,9 +42,12 @@
                                 <?php echo $prov['cliente']?>
                             </td>
                             <td class="text-center"> 
+                                <?php echo $prov['vehiculo']?>
+                            </td>
+                            <td class="text-center"> 
                                 <?php echo $prov['total_pedido']?>
                             </td>
-                            <td class="text-center"><a class="btn btn-warning" href="?c=Factura&a=ver_factura& id_factura=<?php echo $prov['id_factura']?>"><i class="bi bi-search"></i></a></td>
+                            <td class="text-center"><a class="btn btn-warning" href="?c=Factura&a=ver_factura& id_factura=<?php echo $prov['id_factura']?>"><i class="bi bi-eye"></i></a></td>
                             </tr>
                         <?php
                         }

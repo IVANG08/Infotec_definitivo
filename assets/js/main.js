@@ -127,3 +127,15 @@ new DataTable('#tablaproveedor', {
         }
     ]
 });
+new DataTable('#tablafactura', {
+    columnDefs: [
+        {
+            targets: [0],
+            orderData: [0, 1]
+        },
+        {
+            targets: [5],
+            orderData: [5, 0]
+        }
+    ]
+});

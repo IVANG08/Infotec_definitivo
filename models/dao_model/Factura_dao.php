@@ -28,13 +28,11 @@
 			select l.id_servicios, s.nombre_servicio, l.valor_venta, l.cantidad from lista_servicios_f  l
 			inner join servicios s on s.id_servicios=l.id_servicios = s.id_servicios
 			where id_factura=".$id.";";
-			
 			$resultado = $this->pdo->query($sql);
             $verfactura = $resultado->fetchAll();
 			$sql = "SELECT f.*,v.placa_vehiculo as vehiculo, CONCAT(c.nombre_cliente, ' ', c.apellido_cliente) as cliente FROM factura f inner join vehiculos v on v.id_vehiculo=f.placa_vehiculo inner join clientes c on c.id_cliente=f.identificacion_cliente where id_factura=".$id.";";
 			$resultado = $this->pdo->query($sql);
 			$infoFactura = $resultado->fetchAll();
-
             return [$verfactura , $infoFactura];
 
 		}
