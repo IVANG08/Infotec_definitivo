@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-08-2023 a las 00:22:17
+-- Tiempo de generación: 01-09-2023 a las 01:51:43
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -78,30 +78,15 @@ INSERT INTO `clientes` (`id_cliente`, `identificacion_cliente`, `nombre_cliente`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `compras`
---
-
-CREATE TABLE `compras` (
-  `id_compras` varchar(10) NOT NULL,
-  `fecha_compra` date NOT NULL,
-  `total_precio_compra` decimal(10,2) NOT NULL,
-  `id_proveedor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `factura`
 --
 
 CREATE TABLE `factura` (
-  `id_factuta` int(11) NOT NULL,
+  `id_factura` int(11) NOT NULL,
   `id_usuarios` varchar(10) NOT NULL,
   `identificacion_cliente` varchar(10) NOT NULL,
   `placa_vehiculo` int(10) DEFAULT NULL,
   `fecha_factura` date NOT NULL,
-  `total_antesiva_prod` decimal(10,2) NOT NULL,
-  `iva_pedido` decimal(10,2) NOT NULL,
   `total_pedido` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -109,21 +94,8 @@ CREATE TABLE `factura` (
 -- Volcado de datos para la tabla `factura`
 --
 
-INSERT INTO `factura` (`id_factuta`, `id_usuarios`, `identificacion_cliente`, `placa_vehiculo`, `fecha_factura`, `total_antesiva_prod`, `iva_pedido`, `total_pedido`) VALUES
-(4, '123456', '1', 1, '2022-09-26', '43000.00', '8170.00', '20000.00');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `lista_productos_c`
---
-
-CREATE TABLE `lista_productos_c` (
-  `id_compras` varchar(10) NOT NULL,
-  `id_productos` varchar(10) NOT NULL,
-  `precio_producto_compra` decimal(10,2) NOT NULL,
-  `cantidad_productos_compra` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `factura` (`id_factura`, `id_usuarios`, `identificacion_cliente`, `placa_vehiculo`, `fecha_factura`, `total_pedido`) VALUES
+(4, '123456', '1', 1, '2022-09-26', '20000.00');
 
 -- --------------------------------------------------------
 
@@ -132,19 +104,21 @@ CREATE TABLE `lista_productos_c` (
 --
 
 CREATE TABLE `lista_productos_f` (
+  `id_listP` int(11) NOT NULL,
   `id_factura` int(11) NOT NULL,
   `id_producto` varchar(10) NOT NULL,
-  `cantidad_productos` int(11) NOT NULL
+  `cantidad` int(11) NOT NULL,
+  `valor_venta` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `lista_productos_f`
 --
 
-INSERT INTO `lista_productos_f` (`id_factura`, `id_producto`, `cantidad_productos`) VALUES
-(4, 'prod_15', 1),
-(4, 'prod_11', 1),
-(4, 'prod_14', 1);
+INSERT INTO `lista_productos_f` (`id_listP`, `id_factura`, `id_producto`, `cantidad`, `valor_venta`) VALUES
+(1, 4, 'prod_15', 1, '0'),
+(2, 4, 'prod_11', 1, '0'),
+(3, 4, 'prod_14', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -153,17 +127,20 @@ INSERT INTO `lista_productos_f` (`id_factura`, `id_producto`, `cantidad_producto
 --
 
 CREATE TABLE `lista_servicios_f` (
+  `id_listS` int(11) NOT NULL,
+  `id_factura` int(11) NOT NULL,
   `id_servicios` varchar(10) NOT NULL,
-  `id_factura` int(11) NOT NULL
+  `cantidad` int(11) NOT NULL,
+  `valor_venta` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `lista_servicios_f`
 --
 
-INSERT INTO `lista_servicios_f` (`id_servicios`, `id_factura`) VALUES
-('Serv_1', 4),
-('Serv_10', 4);
+INSERT INTO `lista_servicios_f` (`id_listS`, `id_factura`, `id_servicios`, `cantidad`, `valor_venta`) VALUES
+(1, 4, 'Serv_1', 0, '0'),
+(2, 4, 'Serv_10', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -204,27 +181,6 @@ INSERT INTO `productos` (`id_categoria`, `id_producto`, `nombre_producto`, `prec
 (4, 'prod_7', 'Llanta Trasera Michelin 130/70-13', '237000.00', 4),
 (4, 'prod_8', 'Llanta Delantera Pirelli 110/70 R7', '351000.00', 4),
 (5, 'prod_9', 'Espejos Rizoma De Lujo', '70000.00', 6);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `proveedores`
---
-
-CREATE TABLE `proveedores` (
-  `id_proveedor` int(11) NOT NULL,
-  `nombre_proveedor` varchar(50) NOT NULL,
-  `telefono_proveedor` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `proveedores`
---
-
-INSERT INTO `proveedores` (`id_proveedor`, `nombre_proveedor`, `telefono_proveedor`) VALUES
-(1, 'QUAKER STATE ', 214748364),
-(3, 'LUBCEN S.A.', 2123142),
-(12, 'QUAKER STATE ', 124312);
 
 -- --------------------------------------------------------
 
@@ -334,32 +290,19 @@ ALTER TABLE `clientes`
   ADD KEY `ind_cliente_personas` (`identificacion_cliente`);
 
 --
--- Indices de la tabla `compras`
---
-ALTER TABLE `compras`
-  ADD PRIMARY KEY (`id_compras`),
-  ADD KEY `ind_compras_proveedores` (`id_proveedor`);
-
---
 -- Indices de la tabla `factura`
 --
 ALTER TABLE `factura`
-  ADD PRIMARY KEY (`id_factuta`),
+  ADD PRIMARY KEY (`id_factura`),
   ADD KEY `ind_factura_usurario` (`id_usuarios`),
   ADD KEY `ind_factura_vehiculo` (`placa_vehiculo`),
   ADD KEY `fk_factura_cliente_idx` (`identificacion_cliente`);
 
 --
--- Indices de la tabla `lista_productos_c`
---
-ALTER TABLE `lista_productos_c`
-  ADD KEY `ind_lista_productos_c_compras` (`id_compras`),
-  ADD KEY `ind_lista_productos_c_productos` (`id_productos`);
-
---
 -- Indices de la tabla `lista_productos_f`
 --
 ALTER TABLE `lista_productos_f`
+  ADD PRIMARY KEY (`id_listP`),
   ADD KEY `ind_lista_productos_f_productos` (`id_producto`),
   ADD KEY `ind_lista_productos_f_factura` (`id_factura`);
 
@@ -367,6 +310,7 @@ ALTER TABLE `lista_productos_f`
 -- Indices de la tabla `lista_servicios_f`
 --
 ALTER TABLE `lista_servicios_f`
+  ADD PRIMARY KEY (`id_listS`),
   ADD KEY `ind_lista_servicio_f_servicio` (`id_servicios`),
   ADD KEY `ind_lista_servicio_f_factura` (`id_factura`);
 
@@ -376,12 +320,6 @@ ALTER TABLE `lista_servicios_f`
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`),
   ADD KEY `ind_producto_categoria` (`id_categoria`);
-
---
--- Indices de la tabla `proveedores`
---
-ALTER TABLE `proveedores`
-  ADD PRIMARY KEY (`id_proveedor`);
 
 --
 -- Indices de la tabla `roles`
@@ -425,13 +363,19 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `factura`
 --
 ALTER TABLE `factura`
-  MODIFY `id_factuta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `proveedores`
+-- AUTO_INCREMENT de la tabla `lista_productos_f`
 --
-ALTER TABLE `proveedores`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `lista_productos_f`
+  MODIFY `id_listP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `lista_servicios_f`
+--
+ALTER TABLE `lista_servicios_f`
+  MODIFY `id_listS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -450,12 +394,6 @@ ALTER TABLE `vehiculos`
 --
 
 --
--- Filtros para la tabla `compras`
---
-ALTER TABLE `compras`
-  ADD CONSTRAINT `fk_compras_proveedores` FOREIGN KEY (`id_proveedor`) REFERENCES `proveedores` (`id_proveedor`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `factura`
 --
 ALTER TABLE `factura`
@@ -464,24 +402,17 @@ ALTER TABLE `factura`
   ADD CONSTRAINT `factura_ibfk_3` FOREIGN KEY (`id_usuarios`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `lista_productos_c`
---
-ALTER TABLE `lista_productos_c`
-  ADD CONSTRAINT `fk_lista_productos_c_compras` FOREIGN KEY (`id_compras`) REFERENCES `compras` (`id_compras`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_lista_productos_c_productos` FOREIGN KEY (`id_productos`) REFERENCES `productos` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `lista_productos_f`
 --
 ALTER TABLE `lista_productos_f`
   ADD CONSTRAINT `fk_lista_productos_f` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_lista_productos_f_factura` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factuta`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_lista_productos_f_factura` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `lista_servicios_f`
 --
 ALTER TABLE `lista_servicios_f`
-  ADD CONSTRAINT `fk_lista_servicio_f_factura` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factuta`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_lista_servicio_f_factura` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_lista_servicio_f_servicio` FOREIGN KEY (`id_servicios`) REFERENCES `servicios` (`id_servicios`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
