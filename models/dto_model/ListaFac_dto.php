@@ -3,12 +3,14 @@ class ListaFac_dto{
     private $idListFac;
     private $idProducto;
     private $cantProducto;
+    private $valorProducto;
      /* SOBRECARGA DE CONSTRUCTORES */
         // Constructor
-        public function __construct($idListFac, $idProducto, $cantProducto){
+        public function __construct($idListFac, $idProducto, $cantProducto, $valorProducto){
 			$this->idListFac = $idListFac;
 			$this->idProducto= $idProducto;
             $this->cantProducto = $cantProducto;
+            $this->valorProducto = $valorProducto;
 		}
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
         // Código Id Factura
@@ -31,6 +33,12 @@ class ListaFac_dto{
         }
         public function getCantProducto(){
             return $this->cantProducto;
+        }
+        public function setValorProducto($valorProducto){
+            $this->valorProducto = $valorProducto;
+        }
+        public function getValorProducto(){
+            return $this->valorProducto;
         }
 }
 ?>

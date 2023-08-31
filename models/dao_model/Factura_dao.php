@@ -12,13 +12,31 @@
 		}
         // leer datos
         public function verFacturaDao(){
-			$sql = "SELECT * FROM factura";
+			$sql = "SELECT f.*,v.placa_vehiculo as vehiculo, CONCAT(c.nombre_cliente, ' ', c.apellido_cliente)  as cliente FROM factura f inner join vehiculos v on v.id_vehiculo=f.placa_vehiculo inner join clientes c on c.id_cliente=f.identificacion_cliente;";
 			$resultado = $this->pdo->query($sql);
-            
             $verfactura = $resultado->fetchAll();
-			print_r($verfactura);
-			exit;
             return $verfactura;
+		}
+		public function crearFacturaDao(){
+			$sql = "INSERT INTO factura`(`id_factuta`, `id_usuarios`, `identificacion_cliente`, `placa_vehiculo`, `fecha_factura`, `total_antesiva_prod`, `iva_pedido`, `total_pedido`)";
+		}
+		public function verFacturaId($id){
+			$sql = "SELECT f.id_producto, p.nombre_producto, f.valor_venta, f.cantidad FROM lista_productos_f f
+			inner join productos p on p.id_producto=f.id_producto
+			where id_factura=".$id."
+			union all 
+			select l.id_servicios, s.nombre_servicio, l.valor_venta, l.cantidad from lista_servicios_f  l
+			inner join servicios s on s.id_servicios=l.id_servicios = s.id_servicios
+			where id_factura=".$id.";";
+			
+			$resultado = $this->pdo->query($sql);
+            $verfactura = $resultado->fetchAll();
+			$sql = "SELECT f.*,v.placa_vehiculo as vehiculo, CONCAT(c.nombre_cliente, ' ', c.apellido_cliente) as cliente FROM factura f inner join vehiculos v on v.id_vehiculo=f.placa_vehiculo inner join clientes c on c.id_cliente=f.identificacion_cliente where id_factura=".$id.";";
+			$resultado = $this->pdo->query($sql);
+			$infoFactura = $resultado->fetchAll();
+
+            return [$verfactura , $infoFactura];
+
 		}
 
     }
