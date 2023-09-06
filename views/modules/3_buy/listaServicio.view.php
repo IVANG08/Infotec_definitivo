@@ -3,11 +3,8 @@
     <h1 class="titulos mt-1">Agregar Servicio</h1>
     <hr>
         <div class="row tablas">
-           
             <div class="col-md-3">
-                
                 <form method="post" action="?c=ListaServicio" class="row g-3 needs-validation" novalidate>
-                <input type="int" class="form-control mb-3" name="id_listS" placeholder="# Lista">
                 <select class="form-control mb-3" name="id_factura" placeholder="Factura" >
                     <option selected>Elija el # factura</option>
                     <?php foreach($verFactura as $vfac){
@@ -26,8 +23,9 @@
                         }
                         ?>
                     </select>
-                    <input type="text" class="form-control mb-3" name="cantidad" placeholder="Cantidad">
-                    <input type="text" class="form-control mb-3" name="valor_venta" id="valor_venta" placeholder="Valor Venta" readonly>
+                    <input type="text" class="form-control mb-3" name="valor_servicio" id="valor_servicio" placeholder="Valor Servicio" readonly>
+                    <input type="text" class="form-control mb-3" name="cantidad" id="cantidad" placeholder="Cantidad">
+                    <input type="text" class="form-control mb-3" name="valor_venta" id="valor_venta" placeholder="Total" readonly>
                    
                     <input type="submit" class="btn btn-enviar mt-2 ">
                 </form>
@@ -48,9 +46,6 @@
             </div>
         </div>
     </div>
-
-
-
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -64,13 +59,27 @@
     <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
     <script>
+        // obtener el precio del servicio
         $("#id_servicios").on( "change", function() {
             var id = $("#id_servicios").val();
             console.log(id)
             fetch('http://localhost:8081/infotec_definitivo/?c=ListaServicio&a=precioServicio&id=serv_10')
             .then(response => response.json())
             .then(data => console.log(data));
-           
         } );
+        // Multiplicar cantidad * precio
+        $(document).ready(function() {
+        // Función para calcular el total
+        function calcularTotal() {
+            var cantidad = $("#cantidad").val() ;
+            var precio = parseFloat($("#valor_servicio").val()) || 0;
+            var total = cantidad * precio;
+            $("#valor_venta").val(total);
+        }
+        // Evento de cambio en el campo "Cantidad"
+        $("#cantidad").on("input", calcularTotal);
+        // Evento de cambio en el campo "Precio"
+        $("#valor_servicio").on("input", calcularTotal);
+        });
     </script>
 </body>
