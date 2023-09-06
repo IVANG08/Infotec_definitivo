@@ -53,7 +53,7 @@
                         }
                         ?>
                         </tbody>
-                        <?php phpinfo() ?>
+                    
                     </table>
             </div>
         </div>

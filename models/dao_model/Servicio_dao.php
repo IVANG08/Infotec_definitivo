@@ -54,5 +54,13 @@
 				die("....".$e->getMessage());	
 			}
         }
+
+        public function precioServicioDao($id){
+            $sql = " SELECT precio_servicio FROM servicios WHERE id_servicios='$id'";
+            $resultado = $this->pdo->query($sql);
+			$consulta = $resultado->fetch();
+            return $consulta[0];
+        }
+
     }
 ?>
