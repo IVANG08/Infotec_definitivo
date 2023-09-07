@@ -6,7 +6,6 @@
             <div class="col-md-3">
                 
                 <form method="post" action="?c=ListaProducto" class="row g-3 needs-validation" novalidate>
-               
                 <select class="form-control mb-3" name="id_factura" placeholder="Factura" >
                     <option selected>Elija el # factura</option>
                     <?php foreach($verFactura as $vfac){
@@ -65,15 +64,16 @@
     <script>
         $("#id_producto").on( 'change', function() {
             var id = $("#id_producto").val();
-            fetch('http://localhost/infotec_definitivo-main/Infotec_definitivo-main/?c=ListaServicio&a=precioServicio&id=Serv_10')
+            fetch('http://localhost/infotec_definitivo-main/Infotec_definitivo-main/?c=ListaServicio&a=precioServicio&id='+id)
             .then(response => response.json())
             .then(data => console.log(data));
         } );
         $(document).ready(function() {
         // Función para calcular el total
         function calcularTotal() {
-            var cantidad = $("#cantidad").val() ;
-            var precio = parseFloat($("#valor_producto").val()) || 0;
+            var cantidad = $("#cantidad").val();
+            var precio = $("#valor_producto").val();
+            console.log(precio);
             var total = cantidad * precio;
             $("#valor_venta").val(total);
         }

@@ -15,6 +15,7 @@
             $sql = "SELECT * FROM servicios";
             $resultado = $this->pdo->query($sql);
             $verServicio = $resultado->fetchall();
+            
             return $verServicio;
         }
         public function consultarServicioDao($idServicio){
@@ -59,7 +60,7 @@
             $sql = " SELECT precio_servicio FROM servicios WHERE id_servicios='$id'";
             $resultado = $this->pdo->query($sql);
 			$consulta = $resultado->fetch();
-            return $consulta[0];
+            echo $consulta[0];
         }
 
     }

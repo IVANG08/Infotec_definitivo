@@ -288,7 +288,7 @@ div.row {
 }
 .row form{
     display: flex;
-    flex-wrap: wrap;
+    
     justify-content: center;
 }
 .titulos{

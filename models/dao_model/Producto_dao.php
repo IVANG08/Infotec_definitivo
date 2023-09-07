@@ -60,17 +60,11 @@
                 die("....".$e->getMessage());	
             }
         }
-        public function obtenerprecioDao($idProducto){
-            $sql = "SELECT * FROM productos WHERE id_producto=?";
-            $resultado = $this->pdo->prepare($sql);
-$resultado->bind_param('i', $productoId);
-$resultado->execute();
-$resultado->bind_result($precio);
-$resultado->fetch();
-$resultado->close();
-
-// Devolver el precio como respuesta
-echo $precio;
+        public function precioProductoDao($id){
+            $sql = " SELECT precio_producto FROM producto WHERE id_producto='$id'";
+            $resultado = $this->pdo->query($sql);
+			$consulta = $resultado->fetch();
+            echo $consulta[0];
         }
     }
 

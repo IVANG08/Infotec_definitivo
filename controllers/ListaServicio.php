@@ -38,6 +38,11 @@
             $this->servicioDao->precioServicioDao($_GET['id']);
             
         }
+        public function busquedaServicio(){
+            echo json_encode($this->servicioDao->verServicioDao());
+            
+            
+        }
         
 
 

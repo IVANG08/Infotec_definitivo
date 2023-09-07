@@ -24,5 +24,11 @@
             require_once "views/modules/3_buy/factura.view.php";
             require_once "views/roles/admin/footer.php";
         }
+        public function crear_factura(){
+            
+            require_once "views/roles/admin/header_dash.php";
+            require_once "views/modules/3_buy/factura.create.php";
+            require_once "views/roles/admin/footer.php";
+        }
     }
 ?>
