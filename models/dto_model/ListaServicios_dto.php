@@ -7,8 +7,7 @@ class ListaServicios_dto{
     private $valorServicio;
      /* SOBRECARGA DE CONSTRUCTORES */
         // Constructor
-        public function __construct($idListaS, $idFac, $idServicio, $cantServicio, $valorServicio){
-			$this->idListaS = $idListaS;
+        public function __construct( $idFac, $idServicio, $cantServicio, $valorServicio){
 			$this->idFac = $idFac;
 			$this->idServicio= $idServicio;
             $this->cantServicio = $cantServicio;

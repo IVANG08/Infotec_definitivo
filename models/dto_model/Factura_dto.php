@@ -5,19 +5,14 @@ class Factura_dto{
     private $idcliente;
     private $placa;
     private $fecha;
-    private $antesdeiva;
-    private $iva;
     private $total;
      /* SOBRECARGA DE CONSTRUCTORES */
         // Constructor
-        public function __construct($idfactura, $idusuario, $idcliente, $placa, $fecha, $antesdeiva, $iva, $total){
-			$this->idfactura = $idfactura;
+        public function __construct($idusuario, $idcliente, $placa, $fecha, $total){
 			$this->idusuario= $idusuario;
             $this->idcliente = $idcliente ;
             $this->placa= $placa ;
             $this->fecha= $fecha;
-            $this->antesdeiva= $antesdeiva ;
-            $this->iva= $iva ;
             $this->total= $total ;
 		}
         /* MÉTODOS DE ACCESO: SETTER Y GETTERS*/
@@ -55,20 +50,6 @@ class Factura_dto{
         }
         public function getFecha(){
             return $this->fecha;
-        }
-        // Total antes de iva
-        public function setAntIva($antesdeiva){
-            $this->antesdeiva = $antesdeiva;
-        }
-        public function getAntIva(){
-            return $this->antesdeiva;
-        }
-        // Iva
-        public function setIva($iva){
-            $this->iva = $iva;
-        }
-        public function getIva(){
-            return $this->iva;
         }
         // Total
         public function setTotal($total ){

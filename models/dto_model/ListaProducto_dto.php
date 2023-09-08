@@ -7,8 +7,7 @@ class ListaProducto_dto{
     private $valorProducto;
      /* SOBRECARGA DE CONSTRUCTORES */
         // Constructor
-        public function __construct($idListP, $idFac, $idProducto, $cantProducto, $valorProducto){
-			$this->idListP = $idListP;
+        public function __construct($idFac, $idProducto, $cantProducto, $valorProducto){
 			$this->idFac = $idFac;
 			$this->idProducto= $idProducto;
             $this->cantProducto = $cantProducto;

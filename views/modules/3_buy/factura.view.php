@@ -38,10 +38,10 @@
                                 <?php echo $prov['nombre_producto']?>
                             </td>
                             <td class="text-center"> 
-                                <?php echo $prov['valor_venta']?>
+                                <?php echo $prov['cantidad']?>
                             </td>
                             <td class="text-center"> 
-                                <?php echo $prov['cantidad']?>
+                                <?php echo $prov['valor_venta']?>
                             </td>
                             </tr>
                             <?php
@@ -49,12 +49,14 @@
                         ?>
                         
                         <tr>
-                            <td class="text-center"> 
+                            <td  colspan="3" class="text-center"> 
                                 Total
                             </td>
+                            
                             <td class="text-center"> 
                                 <?php echo $prov['total_pedido']?>
                             </td>
+                                
                         </tr>
                         </tbody>
                     </table>

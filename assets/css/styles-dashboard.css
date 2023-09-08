@@ -142,9 +142,7 @@ nav {
 .options_menu .option h4 {
     font-size: 18px;
     font-weight: 200;
-    cursor: pointer;
-    
-    
+    cursor: pointer;   
 }
 a.selected {
     color: white;
@@ -394,6 +392,19 @@ span{
     justify-content: center;
     align-items: flex-start;
 }
-.factura{
+.tamaño2 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.btn-otro2 {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #2D93C4;
     display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: 30% 70%;
+    border-radius: 0.35rem;
+    width: 350px;
+    box-shadow: 5px 5px 2px;;
 }

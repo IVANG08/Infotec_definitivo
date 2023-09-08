@@ -7,7 +7,7 @@
             <div class="col-md-3">
                 <div class="tamaño">
                     <td  class="text-center">
-                        <a class="btn-otro btn-secondary" href="?c=Roles"     style="border-top-width: 6px;margin-bottom: 5px;">
+                        <a class="btn-otro btn-secondary" href="?c=Factura&a=crear_factura"     style="border-top-width: 6px;margin-bottom: 5px;">
                             <i class="fas bi-cart4 "></i>
                     <div class= "parrafo">Crear Factura</div>
                     </a>

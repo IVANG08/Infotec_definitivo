@@ -6,78 +6,98 @@
             <div class="div col-md-12">
                 <form method="post" action="?c=Factura&a=crear_factura" class="needs-validation" id="factura"novalidate>
                     <div class="col-md-3 ">
-                    <div class=""> <label class="tituloFac col-md-">Fecha Factura: </label><input type="date"
-                            class="form-control" name="fecha_factura" id="fecha_factura"
-                            placeholder="Fecha Factura"></div>
-                    <div> <label class="tituloFac col-md-">Nombre Cliente: </label> <select class="form-control " name="id_cliente" placeholder="Cliente" id="id_cliente" onchange="getVehi()" >
-                        <option selected>Elija el Cliente</option>
-                            <?php 
-                            foreach ($verCliente as $cliente) {
-                            ?>
-                        <option value='<?php echo $cliente['id_cliente']?>'> <?php echo $cliente['nombre_cliente'] ;echo " ";echo $cliente['apellido_cliente']?></option>
-                            <?php
-                            }
-                            ?>
-                    </select></div>
-                    <div> <label class="tituloFac col-md-">Placa Vehiculo: </label><select class="form-control " name="id_vehiculo" placeholder="Vehiculo" id="id_vehiculo" onchange="getVehi()">
-                    <option selected> Elija vehiculo</option>
-                    
-                    </select>
-                    </div>
-                    
-                    <div> <label class="tituloFac col-md-">Articulos agregados </label><input type="text" class="form-control" name="cant_ids" id="cant_ids" value=1 readonly>
-                    </div>
-                    <div> <label class="tituloFac col-md-">Total: </label><input type="text"
-                            class="form-control" name="valor_venta" id="valor_venta" placeholder="Total" readonly>
-                    </div>
-                    <input type="submit" class="btn btn-enviar mt-2 ">
-                    <a type="button" class="btn btn-enviar mt-2 " id="agregar"> Agregar producto o servicio</a>
+                        <div class=""> <label class="tituloFac col-md-">Fecha Factura: </label><input type="date"
+                                class="form-control" name="fecha_factura" id="fecha_factura"
+                                placeholder="Fecha Factura"></div>
+                        <div> <label class="tituloFac col-md-">Usuario: </label> <select class="form-control " name="id_usuario" placeholder="usuario" id="id_usuario"  >
+                            <option selected>Elija el usuario</option>
+                                <?php 
+                                foreach ($verUsuario as $usuario) {
+                                ?>
+                            <option value='<?php echo $usuario['id_usuario']?>'> <?php echo $usuario['nombres_usuario'] ;echo " ";echo $usuario['apellidos_usuario']?></option>
+                                <?php
+                                }
+                                ?>
+                        </select></div>
+                        <div> <label class="tituloFac col-md-">Cliente: </label> <select class="form-control " name="id_cliente" placeholder="Cliente" id="id_cliente" onchange="getVehi()" >
+                            <option selected>Elija el Cliente</option>
+                                <?php 
+                                foreach ($verCliente as $cliente) {
+                                ?>
+                            <option value='<?php echo $cliente['id_cliente']?>'> <?php echo $cliente['nombre_cliente'] ;echo " ";echo $cliente['apellido_cliente']?></option>
+                                <?php
+                                }
+                                ?>
+                        </select></div>
+                        <div> <label class="tituloFac col-md-">Placa Vehiculo: </label><select class="form-control " name="id_vehiculo" placeholder="Vehiculo" id="id_vehiculo" >
+                        <option selected> Elija vehiculo</option>
+                        
+                        </select>
+                        </div>
+                        
+                        <div><input type="text" class="form-control" name="cant_ids" id="cant_ids" value=1 readonly hidden>
+                        </div>
+                        <div> <label class="tituloFac col-md-">Total: </label><input type="text"
+                                class="form-control" name="total_pedido" id="total_pedido" placeholder="Total" readonly>
+                        </div>
+                        <divs class="tamaño2">
+                            <input  type="submit" class="btn btn-enviar mt-2 ">
+                        </divs>
                     </div>
                     <div class="div col-md-9">
-                    <div class="centabla">
-                        <table id="tablafactura" class="table justify-content-center  table-borderless">
-                            <thead>
-                                <tr class="text-center">
-                                    <th scope="col-1">Id</th>
-                                    <th scope="col-3">Producto/Servicio</th>
-                                    <th scope="col-2">Nombre producto/servicio</th>
-                                    <th scope="col-2">Cantidad</th>
-                                    <th scope="col-2">Valor Unidad</th>
-                                    <th scope="col-2">Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td id="id_1" class="text-center">
-                                        1
-                                    </td>
-                                    <td class="text-center">
-                                        <select class="form-control tipo" name="tipo_1" id='tipo_1' onchange="getPOS(1)"
-                                            placeholder="Elija">
-                                            <option selected>Elija </option>
-                                            <option value="producto">producto</option>
-                                            <option value="servicio">servicio</option>
-                                        </select>
-                                    </td>
-                                    <td class="text-center">
-                                        <select class="form-control pos" name="pos_1" id='pos_1' onchange="getValor(1)" placeholder="Elija">
-                                            <option selected>Elija </option>
-                                        </select>
-                                    </td>
-                                    <td class="text-center">
-                                        <input type="text" class="form-control cantidad" name="cantidad_1" onchange="getTotal(1)" id="cantidad_1" value =1>
-                                    </td>
-                                    <td class="text-center">
-                                        <input type="text" class="form-control valor" name="valor_1" id="valor_1" readonly>
-                                    </td>
-                                    <td class="text-center">
-                                        <input type="text" class="form-control" name="total_1" id="total_1" value =0 readonly>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> 
+                    <div class="tamaño2">
+                    <td  class="text-center">
+                        <a class="btn-otro2 btn-secondary" id="agregar"  style="border-top-width: 6px;margin-bottom: 5px;">
+                            <i class="fas bi bi-bag-plus"></i>
+                    <divs class= "parrafo">Agregar Producto o Servicio</divs>
+                    </a>
+                    </td>
+                </div>
+                    
+                        <div class="centabla">
+                            <table id="tablafactura" class="table justify-content-center  table-borderless">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col-1">Id</th>
+                                        <th scope="col-3">Producto/Servicio</th>
+                                        <th scope="col-2">Nombre producto/servicio</th>
+                                        <th scope="col-2">Cantidad</th>
+                                        <th scope="col-2">Valor Unidad</th>
+                                        <th scope="col-2">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="id_1" class="text-center">
+                                            1
+                                        </td>
+                                        <td class="text-center">
+                                            <select class="form-control tipo" name="tipo_1" id='tipo_1' onchange="getPOS(1)"
+                                                placeholder="Elija">
+                                                <option selected>Elija </option>
+                                                <option value="producto">producto</option>
+                                                <option value="servicio">servicio</option>
+                                            </select>
+                                        </td>
+                                        <td class="text-center">
+                                            <select class="form-control pos" name="pos_1" id='pos_1' onchange="getValor(1)" placeholder="Elija">
+                                                <option selected>Elija </option>
+                                            </select>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control cantidad" name="cantidad_1" onchange="getTotal(1)" id="cantidad_1" value =1>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control valor" name="valor_1" id="valor_1" readonly>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="text" class="form-control" name="total_1" id="total_1" value =0 readonly>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
                 </form>
             </div>
         </div>
@@ -97,9 +117,9 @@
                             let opciones = '<option selected>Elija </option>'
                             data.forEach(function (item) {
                                 opciones += '<option value="' + item.id_vehiculo + '">' + item.placa_vehiculo + '</option>'
-                                console.log(item)
                             });
                             select.html(opciones)
+                            console.log(opciones)
                         }
                         );
         }
@@ -169,7 +189,7 @@
             for (var i = 1; i <= cant; i++) {
                 total += Number($("#total_" + i).val())
             }
-            $('#valor_venta').val(total)
+            $('#total_pedido').val(total)
         }
         function agregarCampo() {
             var nId = Number($('#cant_ids').val()) + 1;
