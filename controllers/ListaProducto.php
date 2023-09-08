@@ -36,5 +36,8 @@
         public function precioProducto(){
             $this->productoDao->precioproductoDao($_GET['id']);
         }
+        public function busquedaproducto(){
+            echo json_encode($this->productoDao->verProductoDao());
+        }
     }
 ?>

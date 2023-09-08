@@ -40,8 +40,6 @@
         }
         public function busquedaServicio(){
             echo json_encode($this->servicioDao->verServicioDao());
-            
-            
         }
         
 

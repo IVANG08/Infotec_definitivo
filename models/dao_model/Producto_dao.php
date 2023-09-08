@@ -61,7 +61,7 @@
             }
         }
         public function precioProductoDao($id){
-            $sql = " SELECT precio_producto FROM producto WHERE id_producto='$id'";
+            $sql = " SELECT precio_producto FROM productos WHERE id_producto='$id'";
             $resultado = $this->pdo->query($sql);
 			$consulta = $resultado->fetch();
             echo $consulta[0];

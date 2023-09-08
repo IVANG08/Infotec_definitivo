@@ -276,7 +276,6 @@ div.row {
 .colum{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
     grid-auto-rows: minmax(100px, auto);
     grid-auto-columns:minmax(100px, auto);
 }
@@ -288,7 +287,6 @@ div.row {
 }
 .row form{
     display: flex;
-    
     justify-content: center;
 }
 .titulos{
@@ -394,4 +392,8 @@ span{
 .centabla{
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+}
+.factura{
+    display: grid;
 }
