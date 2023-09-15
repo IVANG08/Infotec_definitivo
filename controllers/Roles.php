@@ -11,12 +11,12 @@
             $alerta = '';
             if ($_SERVER ['REQUEST_METHOD'] == 'GET' && isset($_GET['id_rol'])){
                 $result= $this->rolDao->consultarRolDao($_GET['id_rol']);
-                $rol_dto = new Rol_dto($result[0],$result[1]);
+                $rol_dto = new Rol_dto($result[1]);
                 $rol_dto->setCodigoRol($result[0]);
             }
             elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-                if (!empty($_POST['id_rol']) && (!empty($_POST['nombre_rol']))){
-                    $rol_dto = new Rol_dto ($_POST['id_rol'], $_POST['nombre_rol']);
+                if ((!empty($_POST['nombre_rol']))){
+                    $rol_dto = new Rol_dto ($_POST['nombre_rol']);
                     $this->rolDao->createRolDao($rol_dto);
                     header("location: ?c=Roles");
                 }
@@ -35,8 +35,8 @@
             require_once "views/roles/admin/footer.php";
         }
         public function modificar_rol(){
-            $rol_dto = new Rol_dto ($_POST['id_rol'], $_POST['nombre_rol']);
-            
+            $rol_dto = new Rol_dto ($_POST['nombre_rol']);
+            $rol_dto->setCodigoRol($_POST['id_rol']);
             $this->rolDao->modificarRolDao($rol_dto);
             header("location: ?c=Roles");
         }
@@ -44,7 +44,5 @@
             $this->rolDao->eliminarRolDao($_GET['id_rol']);
             header("location: ?c=Roles");
         }
-
-      
     }
 ?>
