@@ -1,4 +1,4 @@
-# Sistema de Información INFOTEC
+# INFOTEC - Sistema de Información 
 
 Bienvenido al sistema información Infotec, este sistema fue diseñado para la empresa Lubrimotos la 33. 
 
