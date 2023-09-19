@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once "models/dto_model/Servicio_dto.php";
     require_once "models/dao_model/Servicio_dao.php";
     class Servicio{
@@ -15,8 +16,8 @@
                 $servicio_dto->setIdServicio($result[0]);
             }
             elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-                if(!empty($_POST['id_servicios']) && !empty($_POST['nombre_servicio']) && !empty($_POST['precio_servicio'])){
-                $servicio_dto=new Servicio_dto($_POST['id_servicios'],$_POST['nombre_servicio'],$_POST['precio_servicio']);
+                if(!empty($_POST['nombre_servicio']) && !empty($_POST['precio_servicio'])){
+                $servicio_dto=new Servicio_dto($_POST['nombre_servicio'],$_POST['precio_servicio']);
                 
                 $this->servicioDao->crearServicioDao($servicio_dto);
                 header("Location: ?c=Servicio");
@@ -35,7 +36,8 @@
             require_once "views/roles/admin/footer.php";
         }
         public function modificar_servicio(){
-            $servicio_dto = new Servicio_dto ($_POST['id_servicios'],$_POST['nombre_servicio'],$_POST['precio_servicio']);
+            $servicio_dto = new Servicio_dto ($_POST['nombre_servicio'],$_POST['precio_servicio']);
+            $servicio_dto->setIdServicio($_POST['id_servicios']);
             $this->servicioDao->modificarServicioDao($servicio_dto);
             header("Location: ?c=Servicio");
         }
