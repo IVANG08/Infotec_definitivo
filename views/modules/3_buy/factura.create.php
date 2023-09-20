@@ -136,7 +136,7 @@
         cliente = $('#id_cliente').val()
         console.log(cliente);
         let select = $("#id_vehiculo");
-        fetch('http://localhost:8081/infotec_PDO/?c=Factura&a=vehiculocliente&id=' + cliente)
+        fetch('http://localhost/Infotec_definitivo/?c=Factura&a=vehiculocliente&id=' + cliente)
             .then(response => response.json())
             .then(data => {
                 let opciones = '<option selected>Elija </option>'
@@ -154,7 +154,7 @@
         let select = $("#pos_" + id);
         console.log(id);
         if (tipo == 'servicio') {
-            fetch('http://localhost:8081/infotec_PDO/?c=Listaservicio&a=busquedaServicio')
+            fetch('http://localhost/Infotec_definitivo/?c=Listaservicio&a=busquedaServicio')
                 .then(response => response.json())
                 .then(data => {
                     let opciones = '<option selected>Elija </option>'
@@ -165,7 +165,7 @@
                 }
                 );
         } else if (tipo == 'producto') {
-            fetch('http://localhost:8081/infotec_PDO/?c=Listaproducto&a=busquedaproducto')
+            fetch('http://localhost/Infotec_definitivo/?c=Listaproducto&a=busquedaproducto')
                 .then(response => response.json())
                 .then(data => {
                     let opciones = '<option selected>Elija </option>'
@@ -183,7 +183,7 @@
         var idpos = $("#pos_" + id).val()
         var tipo = $("#tipo_" + id).val();
         if (tipo == 'servicio') {
-            fetch('http://localhost:8081/infotec_PDO/?c=ListaServicio&a=precioServicio&id=' + idpos)
+            fetch('http://localhost/Infotec_definitivo/?c=ListaServicio&a=precioServicio&id=' + idpos)
                 .then(response => response.json())
                 .then(data => {
                     $("#valor_" + id).val(data)
@@ -191,7 +191,7 @@
                     console.log(id)
                 });
         } else if (tipo == 'producto') {
-            fetch('http://localhost:8081/infotec_PDO/?c=Listaproducto&a=precioProducto&id=' + idpos)
+            fetch('http://localhost/Infotec_definitivo/?c=Listaproducto&a=precioProducto&id=' + idpos)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
